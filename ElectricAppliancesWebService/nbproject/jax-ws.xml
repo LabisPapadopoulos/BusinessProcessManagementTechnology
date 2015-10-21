@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jax-ws xmlns="http://www.netbeans.org/ns/jax-ws/1">
+  <services>
+    <service name="Service1">
+      <implementation-class>gr.uoa.di.tded.labisp.gstam.services.Service1</implementation-class>
+    </service>
+    <service name="Service2">
+      <implementation-class>gr.uoa.di.tded.labisp.gstam.services.Service2</implementation-class>
+    </service>
+    <service name="Service3">
+      <implementation-class>gr.uoa.di.tded.labisp.gstam.services.Service3</implementation-class>
+    </service>
+    <service name="Service4">
+      <implementation-class>gr.uoa.di.tded.labisp.gstam.services.Service4</implementation-class>
+    </service>
+    <service name="Service5">
+      <implementation-class>gr.uoa.di.tded.labisp.gstam.services.Service5</implementation-class>
+    </service>
+  </services>
+  <clients/>
+  <jsr109>true</jsr109>
+</jax-ws>

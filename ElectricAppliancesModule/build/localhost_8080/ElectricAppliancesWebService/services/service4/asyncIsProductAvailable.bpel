@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<process
+    name="asyncIsProductAvailable"
+    targetNamespace="http://enterprise.netbeans.org/bpel/ElectricAppliancesModule/asyncIsProductAvailable"
+    xmlns="http://docs.oasis-open.org/wsbpel/2.0/process/executable"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:sxt="http://www.sun.com/wsbpel/2.0/process/executable/SUNExtension/Trace" 
+    xmlns:sxed="http://www.sun.com/wsbpel/2.0/process/executable/SUNExtension/Editor"
+    xmlns:tns="http://enterprise.netbeans.org/bpel/ElectricAppliancesModule/asyncIsProductAvailable">
+    <import namespace="http://j2ee.netbeans.org/wsdl/ElectricAppliancesModule/asyncIsProductAvailable" location="asyncIsProductAvailable.wsdl" importType="http://schemas.xmlsoap.org/wsdl/"/>
+    <import namespace="http://j2ee.netbeans.org/wsdl/ElectricAppliancesModule/Service4ServiceServiceWrapper" location="../../Service4ServiceServiceWrapper.wsdl" importType="http://schemas.xmlsoap.org/wsdl/"/>
+    <import namespace="http://services.gstam.labisp.tded.di.uoa.gr/" location="../../Service4Service.wsdl" importType="http://schemas.xmlsoap.org/wsdl/"/>
+    <partnerLinks>
+        <partnerLink name="PartnerLink2" xmlns:tns="http://j2ee.netbeans.org/wsdl/ElectricAppliancesModule/Service4ServiceServiceWrapper" partnerLinkType="tns:Service4ServiceLinkType" partnerRole="Service4ServiceRole"/>
+        <partnerLink name="PartnerLink1" xmlns:tns="http://j2ee.netbeans.org/wsdl/ElectricAppliancesModule/asyncIsProductAvailable" partnerLinkType="tns:isProductAvailable" myRole="isProductAvailablePortTypeRole"/>
+    </partnerLinks>
+    <variables>
+        <variable name="IsProductAvailableOperationOut" xmlns:tns="http://j2ee.netbeans.org/wsdl/ElectricAppliancesModule/asyncIsProductAvailable" messageType="tns:isProductAvailableOperationResponse"/>
+        <variable name="IsProductAvailableOut" xmlns:tns="http://services.gstam.labisp.tded.di.uoa.gr/" messageType="tns:isProductAvailableResponse"/>
+        <variable name="IsProductAvailableIn" xmlns:tns="http://services.gstam.labisp.tded.di.uoa.gr/" messageType="tns:isProductAvailable"/>
+        <variable name="IsProductAvailableOperationIn" xmlns:tns="http://j2ee.netbeans.org/wsdl/ElectricAppliancesModule/asyncIsProductAvailable" messageType="tns:isProductAvailableOperationRequest"/>
+    </variables>
+    <sequence>
+        <receive name="Receive1" createInstance="yes" partnerLink="PartnerLink1" operation="isProductAvailableOperation" xmlns:tns="http://j2ee.netbeans.org/wsdl/ElectricAppliancesModule/asyncIsProductAvailable" portType="tns:isProductAvailablePortType" variable="IsProductAvailableOperationIn"/>
+        <assign name="Assign1">
+            <copy>
+                <from variable="IsProductAvailableOperationIn" part="productId"/>
+                <to variable="IsProductAvailableOperationIn" part="productId"/>
+            </copy>
+            <copy>
+                <from variable="IsProductAvailableOperationOut" part="booleanValue"/>
+                <to variable="IsProductAvailableOperationOut" part="booleanValue"/>
+            </copy>
+        </assign>
+        <invoke name="Invoke1" partnerLink="PartnerLink2" operation="isProductAvailable" xmlns:tns="http://services.gstam.labisp.tded.di.uoa.gr/" portType="tns:Service4" inputVariable="IsProductAvailableIn" outputVariable="IsProductAvailableOut"/>
+        <assign name="Assign2">
+            <copy>
+                <from variable="IsProductAvailableOut" part="parameters"/>
+                <to variable="IsProductAvailableOut" part="parameters"/>
+            </copy>
+        </assign>
+        <reply name="Reply1" partnerLink="PartnerLink1" operation="isProductAvailableOperation" xmlns:tns="http://j2ee.netbeans.org/wsdl/ElectricAppliancesModule/asyncIsProductAvailable" portType="tns:isProductAvailablePortType" variable="IsProductAvailableOperationOut"/>
+    </sequence>
+</process>
+

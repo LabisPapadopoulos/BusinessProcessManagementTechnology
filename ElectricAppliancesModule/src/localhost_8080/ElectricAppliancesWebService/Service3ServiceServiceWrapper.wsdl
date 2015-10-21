@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions name="Service3ServiceServiceWrapper" targetNamespace="http://j2ee.netbeans.org/wsdl/ElectricAppliancesModule/Service3ServiceServiceWrapper"
+    xmlns="http://schemas.xmlsoap.org/wsdl/"
+    xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://j2ee.netbeans.org/wsdl/ElectricAppliancesModule/Service3ServiceServiceWrapper" xmlns:plnk="http://docs.oasis-open.org/wsbpel/2.0/plnktype" xmlns:ns6="http://services.gstam.labisp.tded.di.uoa.gr/">
+    <import location="Service3Service.wsdl" namespace="http://services.gstam.labisp.tded.di.uoa.gr/"/>
+    <plnk:partnerLinkType name="Service3ServiceLinkType">
+        <plnk:role name="Service3ServiceRole" portType="ns6:Service3"/>
+    </plnk:partnerLinkType>
+</definitions>
+

@@ -1,0 +1,37 @@
+<?xml version='1.0' encoding='UTF-8'?><!-- Published by JAX-WS RI at http://jax-ws.dev.java.net. RI's version is JAX-WS RI 2.2-hudson-752-. --><xs:schema xmlns:tns="http://services.gstam.labisp.tded.di.uoa.gr/" xmlns:xs="http://www.w3.org/2001/XMLSchema" version="1.0" targetNamespace="http://services.gstam.labisp.tded.di.uoa.gr/">
+
+<xs:element name="IOException" type="tns:IOException" />
+
+<xs:element name="findProduct" type="tns:findProduct" />
+
+<xs:element name="findProductResponse" type="tns:findProductResponse" />
+
+<xs:complexType name="findProduct">
+<xs:sequence>
+<xs:element name="productId" type="xs:string" minOccurs="0" />
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="findProductResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:product" minOccurs="0" />
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="product">
+<xs:sequence>
+<xs:element name="availability" type="xs:boolean" minOccurs="0" />
+<xs:element name="category" type="xs:string" minOccurs="0" />
+<xs:element name="description" type="xs:string" minOccurs="0" />
+<xs:element name="name" type="xs:string" minOccurs="0" />
+<xs:element name="price" type="xs:double" />
+<xs:element name="productId" type="xs:string" minOccurs="0" />
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="IOException">
+<xs:sequence>
+<xs:element name="message" type="xs:string" minOccurs="0" />
+</xs:sequence>
+</xs:complexType>
+</xs:schema>

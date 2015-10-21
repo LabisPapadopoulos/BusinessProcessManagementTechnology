@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<process
+    name="asyncGetCreditCards"
+    targetNamespace="http://enterprise.netbeans.org/bpel/ElectricAppliancesModule/asyncGetCreditCards"
+    xmlns="http://docs.oasis-open.org/wsbpel/2.0/process/executable"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:sxt="http://www.sun.com/wsbpel/2.0/process/executable/SUNExtension/Trace" 
+    xmlns:sxed="http://www.sun.com/wsbpel/2.0/process/executable/SUNExtension/Editor"
+    xmlns:tns="http://enterprise.netbeans.org/bpel/ElectricAppliancesModule/asyncGetCreditCards">
+    <import namespace="http://j2ee.netbeans.org/wsdl/ElectricAppliancesModule/asyncGetCreditCards" location="asyncGetCreditCards.wsdl" importType="http://schemas.xmlsoap.org/wsdl/"/>
+    <import namespace="http://j2ee.netbeans.org/wsdl/ElectricAppliancesModule/Service3ServiceServiceWrapper" location="../../Service3ServiceServiceWrapper.wsdl" importType="http://schemas.xmlsoap.org/wsdl/"/>
+    <import namespace="http://services.gstam.labisp.tded.di.uoa.gr/" location="../../Service3Service.wsdl" importType="http://schemas.xmlsoap.org/wsdl/"/>
+    <partnerLinks>
+        <partnerLink name="PartnerLink2" xmlns:tns="http://j2ee.netbeans.org/wsdl/ElectricAppliancesModule/Service3ServiceServiceWrapper" partnerLinkType="tns:Service3ServiceLinkType" partnerRole="Service3ServiceRole"/>
+        <partnerLink name="PartnerLink1" xmlns:tns="http://j2ee.netbeans.org/wsdl/ElectricAppliancesModule/asyncGetCreditCards" partnerLinkType="tns:getCreditCards" myRole="getCreditCardsPortTypeRole"/>
+    </partnerLinks>
+    <variables>
+        <variable name="GetCreditCardsOperationOut" xmlns:tns="http://j2ee.netbeans.org/wsdl/ElectricAppliancesModule/asyncGetCreditCards" messageType="tns:getCreditCardsOperationResponse"/>
+        <variable name="GetCreditCardsOut" xmlns:tns="http://services.gstam.labisp.tded.di.uoa.gr/" messageType="tns:getCreditCardsResponse"/>
+        <variable name="GetCreditCardsIn" xmlns:tns="http://services.gstam.labisp.tded.di.uoa.gr/" messageType="tns:getCreditCards"/>
+        <variable name="GetCreditCardsOperationIn" xmlns:tns="http://j2ee.netbeans.org/wsdl/ElectricAppliancesModule/asyncGetCreditCards" messageType="tns:getCreditCardsOperationRequest"/>
+    </variables>
+    <sequence>
+        <receive name="Receive1" createInstance="yes" partnerLink="PartnerLink1" operation="getCreditCardsOperation" xmlns:tns="http://j2ee.netbeans.org/wsdl/ElectricAppliancesModule/asyncGetCreditCards" portType="tns:getCreditCardsPortType" variable="GetCreditCardsOperationIn"/>
+        <assign name="Assign1">
+            <copy>
+                <from variable="GetCreditCardsOperationIn" part="userId"/>
+                <to variable="GetCreditCardsOperationIn" part="userId"/>
+            </copy>
+            <copy>
+                <from variable="GetCreditCardsOut" part="parameters"/>
+                <to variable="GetCreditCardsOut" part="parameters"/>
+            </copy>
+            <copy>
+                <from variable="GetCreditCardsOperationOut" part="creditCardList"/>
+                <to variable="GetCreditCardsOperationOut" part="creditCardList"/>
+            </copy>
+        </assign>
+        <invoke name="Invoke1" partnerLink="PartnerLink2" operation="getCreditCards" xmlns:tns="http://services.gstam.labisp.tded.di.uoa.gr/" portType="tns:Service3" inputVariable="GetCreditCardsIn" outputVariable="GetCreditCardsOut"/>
+        <assign name="Assign2">
+            <copy>
+                <from variable="GetCreditCardsOut" part="parameters"/>
+                <to variable="GetCreditCardsOut" part="parameters"/>
+            </copy>
+        </assign>
+        <reply name="Reply1" partnerLink="PartnerLink1" operation="getCreditCardsOperation" xmlns:tns="http://j2ee.netbeans.org/wsdl/ElectricAppliancesModule/asyncGetCreditCards" portType="tns:getCreditCardsPortType" variable="GetCreditCardsOperationOut"/>
+    </sequence>
+</process>
+
+

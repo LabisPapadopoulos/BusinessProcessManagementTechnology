@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<jbi xmlns="http://java.sun.com/xml/ns/jbi" xmlns:ns1="http://enterprise.netbeans.org/bpel/ElectricAppliancesModule/asyncCartCost" xmlns:ns10="http://enterprise.netbeans.org/bpel/ElectricAppliancesModule/asyncFindCart" xmlns:ns11="http://j2ee.netbeans.org/wsdl/ElectricAppliancesModule/asyncFindCart" xmlns:ns12="http://j2ee.netbeans.org/wsdl/ElectricAppliancesModule/businessPrecess2" xmlns:ns13="http://enterprise.netbeans.org/bpel/ElectricAppliancesModule/asyncBookProduct" xmlns:ns14="http://enterprise.netbeans.org/bpel/ElectricAppliancesModule/asyncCancelBookProduct" xmlns:ns15="http://enterprise.netbeans.org/bpel/ElectricAppliancesModule/asyncIsProductAvailable" xmlns:ns16="http://enterprise.netbeans.org/bpel/ElectricAppliancesModule/asyncGetAddresses" xmlns:ns17="http://enterprise.netbeans.org/bpel/ElectricAppliancesModule/asyncGetCreditCards" xmlns:ns18="http://enterprise.netbeans.org/bpel/ElectricAppliancesModule/asyncGetOrderHistory" xmlns:ns19="http://j2ee.netbeans.org/wsdl/ElectricAppliancesModule/asyncRefund" xmlns:ns2="http://services.gstam.labisp.tded.di.uoa.gr/" xmlns:ns20="http://j2ee.netbeans.org/wsdl/ElectricAppliancesModule/asyncGetCreditCards" xmlns:ns21="http://j2ee.netbeans.org/wsdl/ElectricAppliancesModule/asyncIsProductAvailable" xmlns:ns22="http://j2ee.netbeans.org/wsdl/ElectricAppliancesModule/businessPrecess1" xmlns:ns23="http://j2ee.netbeans.org/wsdl/ElectricAppliancesModule/asyncCancelBookProduct" xmlns:ns24="http://j2ee.netbeans.org/wsdl/ElectricAppliancesModule/asyncBookProduct" xmlns:ns25="http://j2ee.netbeans.org/wsdl/ElectricAppliancesModule/asyncChargeCard" xmlns:ns26="http://j2ee.netbeans.org/wsdl/ElectricAppliancesModule/asyncGetAddresses" xmlns:ns27="http://j2ee.netbeans.org/wsdl/ElectricAppliancesModule/asyncGetOrderHistory" xmlns:ns3="http://enterprise.netbeans.org/bpel/ElectricAppliancesModule/asyncChargeCard" xmlns:ns4="http://enterprise.netbeans.org/bpel/ElectricAppliancesModule/asyncRefund" xmlns:ns5="http://j2ee.netbeans.org/wsdl/ElectricAppliancesModule/asyncFindProduct" xmlns:ns6="http://enterprise.netbeans.org/bpel/ElectricAppliancesModule/asyncFindProduct" xmlns:ns7="http://j2ee.netbeans.org/wsdl/ElectricAppliancesModule/asyncCartCost" xmlns:ns8="http://enterprise.netbeans.org/bpel/ElectricAppliancesModule/businessPrecess2" xmlns:ns9="http://enterprise.netbeans.org/bpel/ElectricAppliancesModule/businessProcess1" version="1.0">
+    <service-assembly>
+        <identification>
+            <name>ElectricAppliancesCompositeApp</name>
+            <description>Represents the Service Assembly of ElectricAppliancesCompositeApp</description>
+        </identification>
+        <connections>
+            <connection>
+                <consumer endpoint-name="Service5ServiceRole_partnerRole" service-name="ns1:PartnerLink2"/>
+                <provider endpoint-name="Service5Port" service-name="ns2:Service5Service"/>
+            </connection>
+            <connection>
+                <consumer endpoint-name="Service5ServiceRole_partnerRole" service-name="ns3:PartnerLink2"/>
+                <provider endpoint-name="Service5Port" service-name="ns2:Service5Service"/>
+            </connection>
+            <connection>
+                <consumer endpoint-name="Service5ServiceRole_partnerRole" service-name="ns4:PartnerLink2"/>
+                <provider endpoint-name="Service5Port" service-name="ns2:Service5Service"/>
+            </connection>
+            <connection>
+                <consumer endpoint-name="findProductPort" service-name="ns5:findProductService"/>
+                <provider endpoint-name="findProductPortTypeRole_myRole" service-name="ns6:PartnerLink1"/>
+            </connection>
+            <connection>
+                <consumer endpoint-name="cartCostPort" service-name="ns7:cartCostService"/>
+                <provider endpoint-name="cartCostPortTypeRole_myRole" service-name="ns1:PartnerLink1"/>
+            </connection>
+            <connection>
+                <consumer endpoint-name="cartCostPortTypeRole_partnerRole" service-name="ns8:PartnerLink3"/>
+                <provider endpoint-name="cartCostPortTypeRole_myRole" service-name="ns1:PartnerLink1"/>
+            </connection>
+            <connection>
+                <consumer endpoint-name="cartCostPortTypeRole_partnerRole" service-name="ns9:PartnerLink5"/>
+                <provider endpoint-name="cartCostPortTypeRole_myRole" service-name="ns1:PartnerLink1"/>
+            </connection>
+            <connection>
+                <consumer endpoint-name="Service2ServiceRole_partnerRole" service-name="ns10:PartnerLink2"/>
+                <provider endpoint-name="Service2Port" service-name="ns2:Service2Service"/>
+            </connection>
+            <connection>
+                <consumer endpoint-name="findCartPort" service-name="ns11:findCartService"/>
+                <provider endpoint-name="findCartPortTypeRole_myRole" service-name="ns10:PartnerLink1"/>
+            </connection>
+            <connection>
+                <consumer endpoint-name="findCartPortTypeRole_partnerRole" service-name="ns9:PartnerLink2"/>
+                <provider endpoint-name="findCartPortTypeRole_myRole" service-name="ns10:PartnerLink1"/>
+            </connection>
+            <connection>
+                <consumer endpoint-name="Service1ServiceRole_partnerRole" service-name="ns6:PartnerLink2"/>
+                <provider endpoint-name="Service1Port" service-name="ns2:Service1Service"/>
+            </connection>
+            <connection>
+                <consumer endpoint-name="businessPrecess2Port" service-name="ns12:businessPrecess2Service"/>
+                <provider endpoint-name="businessPrecess2PortTypeRole_myRole" service-name="ns8:PartnerLink1"/>
+            </connection>
+            <connection>
+                <consumer endpoint-name="Service4ServiceRole_partnerRole" service-name="ns13:PartnerLink2"/>
+                <provider endpoint-name="Service4Port" service-name="ns2:Service4Service"/>
+            </connection>
+            <connection>
+                <consumer endpoint-name="Service4ServiceRole_partnerRole" service-name="ns14:PartnerLink2"/>
+                <provider endpoint-name="Service4Port" service-name="ns2:Service4Service"/>
+            </connection>
+            <connection>
+                <consumer endpoint-name="Service4ServiceRole_partnerRole" service-name="ns15:PartnerLink2"/>
+                <provider endpoint-name="Service4Port" service-name="ns2:Service4Service"/>
+            </connection>
+            <connection>
+                <consumer endpoint-name="Service3ServiceRole_partnerRole" service-name="ns16:PartnerLink2"/>
+                <provider endpoint-name="Service3Port" service-name="ns2:Service3Service"/>
+            </connection>
+            <connection>
+                <consumer endpoint-name="Service3ServiceRole_partnerRole" service-name="ns17:PartnerLink2"/>
+                <provider endpoint-name="Service3Port" service-name="ns2:Service3Service"/>
+            </connection>
+            <connection>
+                <consumer endpoint-name="Service3ServiceRole_partnerRole" service-name="ns18:PartnerLink2"/>
+                <provider endpoint-name="Service3Port" service-name="ns2:Service3Service"/>
+            </connection>
+            <connection>
+                <consumer endpoint-name="refundPort" service-name="ns19:refundService"/>
+                <provider endpoint-name="refundPortTypeRole_myRole" service-name="ns4:PartnerLink1"/>
+            </connection>
+            <connection>
+                <consumer endpoint-name="refundPortTypeRole_partnerRole" service-name="ns8:PartnerLink4"/>
+                <provider endpoint-name="refundPortTypeRole_myRole" service-name="ns4:PartnerLink1"/>
+            </connection>
+            <connection>
+                <consumer endpoint-name="getCreditCardsPort" service-name="ns20:getCreditCardsService"/>
+                <provider endpoint-name="getCreditCardsPortTypeRole_myRole" service-name="ns17:PartnerLink1"/>
+            </connection>
+            <connection>
+                <consumer endpoint-name="isProductAvailablePort" service-name="ns21:isProductAvailableService"/>
+                <provider endpoint-name="isProductAvailablePortTypeRole_myRole" service-name="ns15:PartnerLink1"/>
+            </connection>
+            <connection>
+                <consumer endpoint-name="isProductAvailablePortTypeRole_partnerRole" service-name="ns9:PartnerLink3"/>
+                <provider endpoint-name="isProductAvailablePortTypeRole_myRole" service-name="ns15:PartnerLink1"/>
+            </connection>
+            <connection>
+                <consumer endpoint-name="businessPrecess1Port" service-name="ns22:businessPrecess1Service"/>
+                <provider endpoint-name="businessPrecess1PortTypeRole_myRole" service-name="ns9:PartnerLink1"/>
+            </connection>
+            <connection>
+                <consumer endpoint-name="cancelBookProductPort" service-name="ns23:cancelBookProductService"/>
+                <provider endpoint-name="cancelBookProductPortTypeRole_myRole" service-name="ns14:PartnerLink1"/>
+            </connection>
+            <connection>
+                <consumer endpoint-name="cancelBookProductPortTypeRole_partnerRole" service-name="ns8:PartnerLink2"/>
+                <provider endpoint-name="cancelBookProductPortTypeRole_myRole" service-name="ns14:PartnerLink1"/>
+            </connection>
+            <connection>
+                <consumer endpoint-name="bookProductPort" service-name="ns24:bookProductService"/>
+                <provider endpoint-name="bookProductPortTypeRole_myRole" service-name="ns13:PartnerLink1"/>
+            </connection>
+            <connection>
+                <consumer endpoint-name="bookProductPortTypeRole_partnerRole" service-name="ns9:PartnerLink4"/>
+                <provider endpoint-name="bookProductPortTypeRole_myRole" service-name="ns13:PartnerLink1"/>
+            </connection>
+            <connection>
+                <consumer endpoint-name="chargeCardPort" service-name="ns25:chargeCardService"/>
+                <provider endpoint-name="chargeCardPortTypeRole_myRole" service-name="ns3:PartnerLink1"/>
+            </connection>
+            <connection>
+                <consumer endpoint-name="chargeCardPortTypeRole_partnerRole" service-name="ns9:PartnerLink6"/>
+                <provider endpoint-name="chargeCardPortTypeRole_myRole" service-name="ns3:PartnerLink1"/>
+            </connection>
+            <connection>
+                <consumer endpoint-name="getAddressesPort" service-name="ns26:getAddressesService"/>
+                <provider endpoint-name="getAddressesPortTypeRole_myRole" service-name="ns16:PartnerLink1"/>
+            </connection>
+            <connection>
+                <consumer endpoint-name="getOrderHistoryPort" service-name="ns27:getOrderHistoryService"/>
+                <provider endpoint-name="getOrderHistoryPortTypeRole_myRole" service-name="ns18:PartnerLink1"/>
+            </connection>
+        </connections>
+    </service-assembly>
+</jbi>

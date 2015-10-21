@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    targetNamespace="http://xml.netbeans.org/schema/Service2"
+    xmlns:tns="http://xml.netbeans.org/schema/Service2"
+    elementFormDefault="qualified">
+    <xsd:complexType name="product">
+        <xsd:sequence>
+            <xsd:element name="productId" type="xsd:string"></xsd:element>
+            <xsd:element name="name" type="xsd:string"></xsd:element>
+            <xsd:element name="category" type="xsd:string"></xsd:element>
+            <xsd:element name="price" type="xsd:double"></xsd:element>
+            <xsd:element name="description" type="xsd:string"></xsd:element>
+            <xsd:element name="availability" type="xsd:boolean"></xsd:element>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:complexType name="productIdList">
+        <xsd:sequence>
+            <xsd:element name="productId" type="xsd:string" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:complexType name="productCountMap">
+        <xsd:sequence>
+            <xsd:element name="map">
+                <xsd:complexType>
+                  <xsd:sequence>
+                    <xsd:element name="entry" minOccurs="0" maxOccurs="unbounded">
+                      <xsd:complexType>
+                        <xsd:sequence>
+                          <xsd:element name="product" minOccurs="0" type="tns:product"/>
+                          <xsd:element name="productCount" minOccurs="0" type="xsd:string"/>
+                        </xsd:sequence>
+                      </xsd:complexType>
+                    </xsd:element>
+                  </xsd:sequence>
+                </xsd:complexType>
+            </xsd:element>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:simpleType name="paymentMethod">
+        <xsd:restriction base="xsd:string" >
+            <xsd:enumeration value="CASH" />
+            <xsd:enumeration value="BANK_PAY" />
+            <xsd:enumeration value="CREDIT_CARD" />
+            <xsd:enumeration value="PAYPAL" />
+        </xsd:restriction>
+    </xsd:simpleType>
+    <xsd:complexType name="cart">
+        <xsd:sequence>
+            <xsd:element name="userId" type="xsd:string"></xsd:element>
+            <xsd:element name="productId" type="tns:productIdList"></xsd:element>
+            <xsd:element name="productCount" type="tns:productCountMap"></xsd:element>
+            <xsd:element name="paymentMethod" type="tns:paymentMethod"></xsd:element>
+            <xsd:element name="shippingAddress" type="xsd:string"></xsd:element>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:complexType name="findCart">
+        <xsd:sequence>
+            <xsd:element name="orderId" type="xsd:string"></xsd:element>
+        </xsd:sequence>
+    </xsd:complexType>
+</xsd:schema>

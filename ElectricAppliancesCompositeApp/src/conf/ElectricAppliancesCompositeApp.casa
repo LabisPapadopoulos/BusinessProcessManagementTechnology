@@ -1,0 +1,284 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<casa xmlns="http://java.sun.com/xml/ns/casa" xmlns:ns1="http://j2ee.netbeans.org/wsdl/ElectricAppliancesModule/asyncFindProduct" xmlns:ns10="http://j2ee.netbeans.org/wsdl/ElectricAppliancesModule/asyncBookProduct" xmlns:ns11="http://j2ee.netbeans.org/wsdl/ElectricAppliancesModule/asyncChargeCard" xmlns:ns12="http://j2ee.netbeans.org/wsdl/ElectricAppliancesModule/asyncGetAddresses" xmlns:ns13="http://j2ee.netbeans.org/wsdl/ElectricAppliancesModule/asyncGetOrderHistory" xmlns:ns14="http://services.gstam.labisp.tded.di.uoa.gr/" xmlns:ns15="http://enterprise.netbeans.org/bpel/ElectricAppliancesModule/businessPrecess2" xmlns:ns16="http://enterprise.netbeans.org/bpel/ElectricAppliancesModule/businessProcess1" xmlns:ns17="http://enterprise.netbeans.org/bpel/ElectricAppliancesModule/asyncFindProduct" xmlns:ns18="http://enterprise.netbeans.org/bpel/ElectricAppliancesModule/asyncFindCart" xmlns:ns19="http://enterprise.netbeans.org/bpel/ElectricAppliancesModule/asyncGetAddresses" xmlns:ns2="http://j2ee.netbeans.org/wsdl/ElectricAppliancesModule/asyncCartCost" xmlns:ns20="http://enterprise.netbeans.org/bpel/ElectricAppliancesModule/asyncGetCreditCards" xmlns:ns21="http://enterprise.netbeans.org/bpel/ElectricAppliancesModule/asyncGetOrderHistory" xmlns:ns22="http://enterprise.netbeans.org/bpel/ElectricAppliancesModule/asyncBookProduct" xmlns:ns23="http://enterprise.netbeans.org/bpel/ElectricAppliancesModule/asyncCancelBookProduct" xmlns:ns24="http://enterprise.netbeans.org/bpel/ElectricAppliancesModule/asyncIsProductAvailable" xmlns:ns25="http://enterprise.netbeans.org/bpel/ElectricAppliancesModule/asyncCartCost" xmlns:ns26="http://enterprise.netbeans.org/bpel/ElectricAppliancesModule/asyncChargeCard" xmlns:ns27="http://enterprise.netbeans.org/bpel/ElectricAppliancesModule/asyncRefund" xmlns:ns3="http://j2ee.netbeans.org/wsdl/ElectricAppliancesModule/asyncFindCart" xmlns:ns4="http://j2ee.netbeans.org/wsdl/ElectricAppliancesModule/businessPrecess2" xmlns:ns5="http://j2ee.netbeans.org/wsdl/ElectricAppliancesModule/asyncRefund" xmlns:ns6="http://j2ee.netbeans.org/wsdl/ElectricAppliancesModule/asyncGetCreditCards" xmlns:ns7="http://j2ee.netbeans.org/wsdl/ElectricAppliancesModule/asyncIsProductAvailable" xmlns:ns8="http://j2ee.netbeans.org/wsdl/ElectricAppliancesModule/businessPrecess1" xmlns:ns9="http://j2ee.netbeans.org/wsdl/ElectricAppliancesModule/asyncCancelBookProduct" xmlns:xlink="http://www.w3.org/2000/xlink">
+    <endpoints>
+        <endpoint endpoint-name="findProductPort" interface-name="ns1:findProductPortType" name="endpoint1" service-name="ns1:findProductService"/>
+        <endpoint endpoint-name="cartCostPort" interface-name="ns2:cartCostPortType" name="endpoint2" service-name="ns2:cartCostService"/>
+        <endpoint endpoint-name="findCartPort" interface-name="ns3:findCartPortType" name="endpoint3" service-name="ns3:findCartService"/>
+        <endpoint endpoint-name="businessPrecess2Port" interface-name="ns4:businessPrecess2PortType" name="endpoint4" service-name="ns4:businessPrecess2Service"/>
+        <endpoint endpoint-name="refundPort" interface-name="ns5:refundPortType" name="endpoint5" service-name="ns5:refundService"/>
+        <endpoint endpoint-name="getCreditCardsPort" interface-name="ns6:getCreditCardsPortType" name="endpoint6" service-name="ns6:getCreditCardsService"/>
+        <endpoint endpoint-name="isProductAvailablePort" interface-name="ns7:isProductAvailablePortType" name="endpoint7" service-name="ns7:isProductAvailableService"/>
+        <endpoint endpoint-name="businessPrecess1Port" interface-name="ns8:businessPrecess1PortType" name="endpoint8" service-name="ns8:businessPrecess1Service"/>
+        <endpoint endpoint-name="cancelBookProductPort" interface-name="ns9:cancelBookProductPortType" name="endpoint9" service-name="ns9:cancelBookProductService"/>
+        <endpoint endpoint-name="bookProductPort" interface-name="ns10:bookProductPortType" name="endpoint10" service-name="ns10:bookProductService"/>
+        <endpoint endpoint-name="chargeCardPort" interface-name="ns11:chargeCardPortType" name="endpoint11" service-name="ns11:chargeCardService"/>
+        <endpoint endpoint-name="getAddressesPort" interface-name="ns12:getAddressesPortType" name="endpoint12" service-name="ns12:getAddressesService"/>
+        <endpoint endpoint-name="getOrderHistoryPort" interface-name="ns13:getOrderHistoryPortType" name="endpoint13" service-name="ns13:getOrderHistoryService"/>
+        <endpoint endpoint-name="Service5Port" interface-name="ns14:Service5" name="endpoint14" service-name="ns14:Service5Service"/>
+        <endpoint endpoint-name="Service2Port" interface-name="ns14:Service2" name="endpoint15" service-name="ns14:Service2Service"/>
+        <endpoint endpoint-name="Service1Port" interface-name="ns14:Service1" name="endpoint16" service-name="ns14:Service1Service"/>
+        <endpoint endpoint-name="Service4Port" interface-name="ns14:Service4" name="endpoint17" service-name="ns14:Service4Service"/>
+        <endpoint endpoint-name="Service3Port" interface-name="ns14:Service3" name="endpoint18" service-name="ns14:Service3Service"/>
+        <endpoint display-name="PartnerLink1" endpoint-name="businessPrecess2PortTypeRole_myRole" file-path="localhost_8080\ElectricAppliancesWebService\businessProcesses\businessPrecess2.bpel" interface-name="ns4:businessPrecess2PortType" name="endpoint19" process-name="businessPrecess2" service-name="ns15:PartnerLink1"/>
+        <endpoint display-name="PartnerLink1" endpoint-name="businessPrecess1PortTypeRole_myRole" file-path="localhost_8080\ElectricAppliancesWebService\businessProcesses\businessProcess1.bpel" interface-name="ns8:businessPrecess1PortType" name="endpoint20" process-name="businessProcess1" service-name="ns16:PartnerLink1"/>
+        <endpoint display-name="PartnerLink1" endpoint-name="findProductPortTypeRole_myRole" file-path="localhost_8080\ElectricAppliancesWebService\services\service1\asyncFindProduct.bpel" interface-name="ns1:findProductPortType" name="endpoint21" process-name="asyncFindProduct" service-name="ns17:PartnerLink1"/>
+        <endpoint display-name="PartnerLink1" endpoint-name="findCartPortTypeRole_myRole" file-path="localhost_8080\ElectricAppliancesWebService\services\service2\asyncFindCart.bpel" interface-name="ns3:findCartPortType" name="endpoint22" process-name="asyncFindCart" service-name="ns18:PartnerLink1"/>
+        <endpoint display-name="PartnerLink1" endpoint-name="getAddressesPortTypeRole_myRole" file-path="localhost_8080\ElectricAppliancesWebService\services\service3\asyncGetAddresses.bpel" interface-name="ns12:getAddressesPortType" name="endpoint23" process-name="asyncGetAddresses" service-name="ns19:PartnerLink1"/>
+        <endpoint display-name="PartnerLink1" endpoint-name="getCreditCardsPortTypeRole_myRole" file-path="localhost_8080\ElectricAppliancesWebService\services\service3\asyncGetCreditCards.bpel" interface-name="ns6:getCreditCardsPortType" name="endpoint24" process-name="asyncGetCreditCards" service-name="ns20:PartnerLink1"/>
+        <endpoint display-name="PartnerLink1" endpoint-name="getOrderHistoryPortTypeRole_myRole" file-path="localhost_8080\ElectricAppliancesWebService\services\service3\asyncGetOrderHistory.bpel" interface-name="ns13:getOrderHistoryPortType" name="endpoint25" process-name="asyncGetOrderHistory" service-name="ns21:PartnerLink1"/>
+        <endpoint display-name="PartnerLink1" endpoint-name="bookProductPortTypeRole_myRole" file-path="localhost_8080\ElectricAppliancesWebService\services\service4\asyncBookProduct.bpel" interface-name="ns10:bookProductPortType" name="endpoint26" process-name="asyncBookProduct" service-name="ns22:PartnerLink1"/>
+        <endpoint display-name="PartnerLink1" endpoint-name="cancelBookProductPortTypeRole_myRole" file-path="localhost_8080\ElectricAppliancesWebService\services\service4\asyncCancelBookProduct.bpel" interface-name="ns9:cancelBookProductPortType" name="endpoint27" process-name="asyncCancelBookProduct" service-name="ns23:PartnerLink1"/>
+        <endpoint display-name="PartnerLink1" endpoint-name="isProductAvailablePortTypeRole_myRole" file-path="localhost_8080\ElectricAppliancesWebService\services\service4\asyncIsProductAvailable.bpel" interface-name="ns7:isProductAvailablePortType" name="endpoint28" process-name="asyncIsProductAvailable" service-name="ns24:PartnerLink1"/>
+        <endpoint display-name="PartnerLink1" endpoint-name="cartCostPortTypeRole_myRole" file-path="localhost_8080\ElectricAppliancesWebService\services\service5\asyncCartCost.bpel" interface-name="ns2:cartCostPortType" name="endpoint29" process-name="asyncCartCost" service-name="ns25:PartnerLink1"/>
+        <endpoint display-name="PartnerLink1" endpoint-name="chargeCardPortTypeRole_myRole" file-path="localhost_8080\ElectricAppliancesWebService\services\service5\asyncChargeCard.bpel" interface-name="ns11:chargeCardPortType" name="endpoint30" process-name="asyncChargeCard" service-name="ns26:PartnerLink1"/>
+        <endpoint display-name="PartnerLink1" endpoint-name="refundPortTypeRole_myRole" file-path="localhost_8080\ElectricAppliancesWebService\services\service5\asyncRefund.bpel" interface-name="ns5:refundPortType" name="endpoint31" process-name="asyncRefund" service-name="ns27:PartnerLink1"/>
+        <endpoint display-name="PartnerLink2" endpoint-name="cancelBookProductPortTypeRole_partnerRole" file-path="localhost_8080\ElectricAppliancesWebService\businessProcesses\businessPrecess2.bpel" interface-name="ns9:cancelBookProductPortType" name="endpoint32" process-name="businessPrecess2" service-name="ns15:PartnerLink2"/>
+        <endpoint display-name="PartnerLink3" endpoint-name="cartCostPortTypeRole_partnerRole" file-path="localhost_8080\ElectricAppliancesWebService\businessProcesses\businessPrecess2.bpel" interface-name="ns2:cartCostPortType" name="endpoint33" process-name="businessPrecess2" service-name="ns15:PartnerLink3"/>
+        <endpoint display-name="PartnerLink4" endpoint-name="refundPortTypeRole_partnerRole" file-path="localhost_8080\ElectricAppliancesWebService\businessProcesses\businessPrecess2.bpel" interface-name="ns5:refundPortType" name="endpoint34" process-name="businessPrecess2" service-name="ns15:PartnerLink4"/>
+        <endpoint display-name="PartnerLink2" endpoint-name="findCartPortTypeRole_partnerRole" file-path="localhost_8080\ElectricAppliancesWebService\businessProcesses\businessProcess1.bpel" interface-name="ns3:findCartPortType" name="endpoint35" process-name="businessProcess1" service-name="ns16:PartnerLink2"/>
+        <endpoint display-name="PartnerLink3" endpoint-name="isProductAvailablePortTypeRole_partnerRole" file-path="localhost_8080\ElectricAppliancesWebService\businessProcesses\businessProcess1.bpel" interface-name="ns7:isProductAvailablePortType" name="endpoint36" process-name="businessProcess1" service-name="ns16:PartnerLink3"/>
+        <endpoint display-name="PartnerLink4" endpoint-name="bookProductPortTypeRole_partnerRole" file-path="localhost_8080\ElectricAppliancesWebService\businessProcesses\businessProcess1.bpel" interface-name="ns10:bookProductPortType" name="endpoint37" process-name="businessProcess1" service-name="ns16:PartnerLink4"/>
+        <endpoint display-name="PartnerLink5" endpoint-name="cartCostPortTypeRole_partnerRole" file-path="localhost_8080\ElectricAppliancesWebService\businessProcesses\businessProcess1.bpel" interface-name="ns2:cartCostPortType" name="endpoint38" process-name="businessProcess1" service-name="ns16:PartnerLink5"/>
+        <endpoint display-name="PartnerLink6" endpoint-name="chargeCardPortTypeRole_partnerRole" file-path="localhost_8080\ElectricAppliancesWebService\businessProcesses\businessProcess1.bpel" interface-name="ns11:chargeCardPortType" name="endpoint39" process-name="businessProcess1" service-name="ns16:PartnerLink6"/>
+        <endpoint display-name="PartnerLink2" endpoint-name="Service1ServiceRole_partnerRole" file-path="localhost_8080\ElectricAppliancesWebService\services\service1\asyncFindProduct.bpel" interface-name="ns14:Service1" name="endpoint40" process-name="asyncFindProduct" service-name="ns17:PartnerLink2"/>
+        <endpoint display-name="PartnerLink2" endpoint-name="Service2ServiceRole_partnerRole" file-path="localhost_8080\ElectricAppliancesWebService\services\service2\asyncFindCart.bpel" interface-name="ns14:Service2" name="endpoint41" process-name="asyncFindCart" service-name="ns18:PartnerLink2"/>
+        <endpoint display-name="PartnerLink2" endpoint-name="Service3ServiceRole_partnerRole" file-path="localhost_8080\ElectricAppliancesWebService\services\service3\asyncGetAddresses.bpel" interface-name="ns14:Service3" name="endpoint42" process-name="asyncGetAddresses" service-name="ns19:PartnerLink2"/>
+        <endpoint display-name="PartnerLink2" endpoint-name="Service3ServiceRole_partnerRole" file-path="localhost_8080\ElectricAppliancesWebService\services\service3\asyncGetCreditCards.bpel" interface-name="ns14:Service3" name="endpoint43" process-name="asyncGetCreditCards" service-name="ns20:PartnerLink2"/>
+        <endpoint display-name="PartnerLink2" endpoint-name="Service3ServiceRole_partnerRole" file-path="localhost_8080\ElectricAppliancesWebService\services\service3\asyncGetOrderHistory.bpel" interface-name="ns14:Service3" name="endpoint44" process-name="asyncGetOrderHistory" service-name="ns21:PartnerLink2"/>
+        <endpoint display-name="PartnerLink2" endpoint-name="Service4ServiceRole_partnerRole" file-path="localhost_8080\ElectricAppliancesWebService\services\service4\asyncBookProduct.bpel" interface-name="ns14:Service4" name="endpoint45" process-name="asyncBookProduct" service-name="ns22:PartnerLink2"/>
+        <endpoint display-name="PartnerLink2" endpoint-name="Service4ServiceRole_partnerRole" file-path="localhost_8080\ElectricAppliancesWebService\services\service4\asyncCancelBookProduct.bpel" interface-name="ns14:Service4" name="endpoint46" process-name="asyncCancelBookProduct" service-name="ns23:PartnerLink2"/>
+        <endpoint display-name="PartnerLink2" endpoint-name="Service4ServiceRole_partnerRole" file-path="localhost_8080\ElectricAppliancesWebService\services\service4\asyncIsProductAvailable.bpel" interface-name="ns14:Service4" name="endpoint47" process-name="asyncIsProductAvailable" service-name="ns24:PartnerLink2"/>
+        <endpoint display-name="PartnerLink2" endpoint-name="Service5ServiceRole_partnerRole" file-path="localhost_8080\ElectricAppliancesWebService\services\service5\asyncCartCost.bpel" interface-name="ns14:Service5" name="endpoint48" process-name="asyncCartCost" service-name="ns25:PartnerLink2"/>
+        <endpoint display-name="PartnerLink2" endpoint-name="Service5ServiceRole_partnerRole" file-path="localhost_8080\ElectricAppliancesWebService\services\service5\asyncChargeCard.bpel" interface-name="ns14:Service5" name="endpoint49" process-name="asyncChargeCard" service-name="ns26:PartnerLink2"/>
+        <endpoint display-name="PartnerLink2" endpoint-name="Service5ServiceRole_partnerRole" file-path="localhost_8080\ElectricAppliancesWebService\services\service5\asyncRefund.bpel" interface-name="ns14:Service5" name="endpoint50" process-name="asyncRefund" service-name="ns27:PartnerLink2"/>
+    </endpoints>
+    <service-units>
+        <service-engine-service-unit artifacts-zip="ElectricAppliancesModule.jar" component-name="sun-bpel-engine" defined="true" description="Represents this Service Unit" internal="true" name="ElectricAppliancesCompositeApp-ElectricAppliancesModule" unit-name="ElectricAppliancesModule" unknown="false" x="65" y="99">
+            <provides endpoint="endpoint19"/>
+            <provides endpoint="endpoint20"/>
+            <provides endpoint="endpoint21"/>
+            <provides endpoint="endpoint22"/>
+            <provides endpoint="endpoint23"/>
+            <provides endpoint="endpoint24"/>
+            <provides endpoint="endpoint25"/>
+            <provides endpoint="endpoint26"/>
+            <provides endpoint="endpoint27"/>
+            <provides endpoint="endpoint28"/>
+            <provides endpoint="endpoint29"/>
+            <provides endpoint="endpoint30"/>
+            <provides endpoint="endpoint31"/>
+            <consumes endpoint="endpoint32"/>
+            <consumes endpoint="endpoint33"/>
+            <consumes endpoint="endpoint34"/>
+            <consumes endpoint="endpoint35"/>
+            <consumes endpoint="endpoint36"/>
+            <consumes endpoint="endpoint37"/>
+            <consumes endpoint="endpoint38"/>
+            <consumes endpoint="endpoint39"/>
+            <consumes endpoint="endpoint40"/>
+            <consumes endpoint="endpoint41"/>
+            <consumes endpoint="endpoint42"/>
+            <consumes endpoint="endpoint43"/>
+            <consumes endpoint="endpoint44"/>
+            <consumes endpoint="endpoint45"/>
+            <consumes endpoint="endpoint46"/>
+            <consumes endpoint="endpoint47"/>
+            <consumes endpoint="endpoint48"/>
+            <consumes endpoint="endpoint49"/>
+            <consumes endpoint="endpoint50"/>
+        </service-engine-service-unit>
+        <binding-component-service-unit artifacts-zip="sun-http-binding.jar" component-name="sun-http-binding" description="Represents this Service Unit" name="ElectricAppliancesCompositeApp-sun-http-binding" unit-name="sun-http-binding">
+            <ports>
+                <port x="67" y="1382">
+                    <link xlink:href="../jbiServiceUnits/ElectricAppliancesModule/localhost_8080/ElectricAppliancesWebService/businessProcesses/businessPrecess1.wsdl#xpointer(/definitions/service[@name='businessPrecess1Service']/port[@name='businessPrecess1Port'])" xlink:type="simple"/>
+                    <consumes endpoint="endpoint8"/>
+                    <provides endpoint="endpoint8"/>
+                </port>
+                <port x="67" y="1303">
+                    <link xlink:href="../jbiServiceUnits/ElectricAppliancesModule/localhost_8080/ElectricAppliancesWebService/businessProcesses/businessPrecess2.wsdl#xpointer(/definitions/service[@name='businessPrecess2Service']/port[@name='businessPrecess2Port'])" xlink:type="simple"/>
+                    <consumes endpoint="endpoint4"/>
+                    <provides endpoint="endpoint4"/>
+                </port>
+                <port x="67" y="355">
+                    <link xlink:href="../jbiServiceUnits/ElectricAppliancesModule/localhost_8080/ElectricAppliancesWebService/Service1Service.wsdl#xpointer(/definitions/service[@name='Service1Service']/port[@name='Service1Port'])" xlink:type="simple"/>
+                    <consumes endpoint="endpoint16"/>
+                    <provides endpoint="endpoint16"/>
+                </port>
+                <port x="67" y="276">
+                    <link xlink:href="../jbiServiceUnits/ElectricAppliancesModule/localhost_8080/ElectricAppliancesWebService/Service2Service.wsdl#xpointer(/definitions/service[@name='Service2Service']/port[@name='Service2Port'])" xlink:type="simple"/>
+                    <consumes endpoint="endpoint15"/>
+                    <provides endpoint="endpoint15"/>
+                </port>
+                <port x="67" y="197">
+                    <link xlink:href="../jbiServiceUnits/ElectricAppliancesModule/localhost_8080/ElectricAppliancesWebService/Service3Service.wsdl#xpointer(/definitions/service[@name='Service3Service']/port[@name='Service3Port'])" xlink:type="simple"/>
+                    <consumes endpoint="endpoint18"/>
+                    <provides endpoint="endpoint18"/>
+                </port>
+                <port x="67" y="118">
+                    <link xlink:href="../jbiServiceUnits/ElectricAppliancesModule/localhost_8080/ElectricAppliancesWebService/Service4Service.wsdl#xpointer(/definitions/service[@name='Service4Service']/port[@name='Service4Port'])" xlink:type="simple"/>
+                    <consumes endpoint="endpoint17"/>
+                    <provides endpoint="endpoint17"/>
+                </port>
+                <port x="67" y="39">
+                    <link xlink:href="../jbiServiceUnits/ElectricAppliancesModule/localhost_8080/ElectricAppliancesWebService/Service5Service.wsdl#xpointer(/definitions/service[@name='Service5Service']/port[@name='Service5Port'])" xlink:type="simple"/>
+                    <consumes endpoint="endpoint14"/>
+                    <provides endpoint="endpoint14"/>
+                </port>
+                <port x="67" y="1224">
+                    <link xlink:href="../jbiServiceUnits/ElectricAppliancesModule/localhost_8080/ElectricAppliancesWebService/services/service1/asyncFindProduct.wsdl#xpointer(/definitions/service[@name='findProductService']/port[@name='findProductPort'])" xlink:type="simple"/>
+                    <consumes endpoint="endpoint1"/>
+                    <provides endpoint="endpoint1"/>
+                </port>
+                <port x="67" y="1145">
+                    <link xlink:href="../jbiServiceUnits/ElectricAppliancesModule/localhost_8080/ElectricAppliancesWebService/services/service2/asyncFindCart.wsdl#xpointer(/definitions/service[@name='findCartService']/port[@name='findCartPort'])" xlink:type="simple"/>
+                    <consumes endpoint="endpoint3"/>
+                    <provides endpoint="endpoint3"/>
+                </port>
+                <port x="67" y="1066">
+                    <link xlink:href="../jbiServiceUnits/ElectricAppliancesModule/localhost_8080/ElectricAppliancesWebService/services/service3/asyncGetAddresses.wsdl#xpointer(/definitions/service[@name='getAddressesService']/port[@name='getAddressesPort'])" xlink:type="simple"/>
+                    <consumes endpoint="endpoint12"/>
+                    <provides endpoint="endpoint12"/>
+                </port>
+                <port x="67" y="987">
+                    <link xlink:href="../jbiServiceUnits/ElectricAppliancesModule/localhost_8080/ElectricAppliancesWebService/services/service3/asyncGetCreditCards.wsdl#xpointer(/definitions/service[@name='getCreditCardsService']/port[@name='getCreditCardsPort'])" xlink:type="simple"/>
+                    <consumes endpoint="endpoint6"/>
+                    <provides endpoint="endpoint6"/>
+                </port>
+                <port x="67" y="908">
+                    <link xlink:href="../jbiServiceUnits/ElectricAppliancesModule/localhost_8080/ElectricAppliancesWebService/services/service3/asyncGetOrderHistory.wsdl#xpointer(/definitions/service[@name='getOrderHistoryService']/port[@name='getOrderHistoryPort'])" xlink:type="simple"/>
+                    <consumes endpoint="endpoint13"/>
+                    <provides endpoint="endpoint13"/>
+                </port>
+                <port x="67" y="829">
+                    <link xlink:href="../jbiServiceUnits/ElectricAppliancesModule/localhost_8080/ElectricAppliancesWebService/services/service4/asyncBookProduct.wsdl#xpointer(/definitions/service[@name='bookProductService']/port[@name='bookProductPort'])" xlink:type="simple"/>
+                    <consumes endpoint="endpoint10"/>
+                    <provides endpoint="endpoint10"/>
+                </port>
+                <port x="67" y="750">
+                    <link xlink:href="../jbiServiceUnits/ElectricAppliancesModule/localhost_8080/ElectricAppliancesWebService/services/service4/asyncCancelBookProduct.wsdl#xpointer(/definitions/service[@name='cancelBookProductService']/port[@name='cancelBookProductPort'])" xlink:type="simple"/>
+                    <consumes endpoint="endpoint9"/>
+                    <provides endpoint="endpoint9"/>
+                </port>
+                <port x="67" y="671">
+                    <link xlink:href="../jbiServiceUnits/ElectricAppliancesModule/localhost_8080/ElectricAppliancesWebService/services/service4/asyncIsProductAvailable.wsdl#xpointer(/definitions/service[@name='isProductAvailableService']/port[@name='isProductAvailablePort'])" xlink:type="simple"/>
+                    <consumes endpoint="endpoint7"/>
+                    <provides endpoint="endpoint7"/>
+                </port>
+                <port x="67" y="592">
+                    <link xlink:href="../jbiServiceUnits/ElectricAppliancesModule/localhost_8080/ElectricAppliancesWebService/services/service5/asyncCartCost.wsdl#xpointer(/definitions/service[@name='cartCostService']/port[@name='cartCostPort'])" xlink:type="simple"/>
+                    <consumes endpoint="endpoint2"/>
+                    <provides endpoint="endpoint2"/>
+                </port>
+                <port x="67" y="513">
+                    <link xlink:href="../jbiServiceUnits/ElectricAppliancesModule/localhost_8080/ElectricAppliancesWebService/services/service5/asyncChargeCard.wsdl#xpointer(/definitions/service[@name='chargeCardService']/port[@name='chargeCardPort'])" xlink:type="simple"/>
+                    <consumes endpoint="endpoint11"/>
+                    <provides endpoint="endpoint11"/>
+                </port>
+                <port x="67" y="434">
+                    <link xlink:href="../jbiServiceUnits/ElectricAppliancesModule/localhost_8080/ElectricAppliancesWebService/services/service5/asyncRefund.wsdl#xpointer(/definitions/service[@name='refundService']/port[@name='refundPort'])" xlink:type="simple"/>
+                    <consumes endpoint="endpoint5"/>
+                    <provides endpoint="endpoint5"/>
+                </port>
+            </ports>
+        </binding-component-service-unit>
+    </service-units>
+    <connections>
+        <connection consumer="endpoint48" provider="endpoint14" state="unchanged"/>
+        <connection consumer="endpoint49" provider="endpoint14" state="unchanged"/>
+        <connection consumer="endpoint50" provider="endpoint14" state="unchanged"/>
+        <connection consumer="endpoint1" provider="endpoint21" state="unchanged"/>
+        <connection consumer="endpoint2" provider="endpoint29" state="unchanged"/>
+        <connection consumer="endpoint33" provider="endpoint29" state="unchanged"/>
+        <connection consumer="endpoint38" provider="endpoint29" state="unchanged"/>
+        <connection consumer="endpoint41" provider="endpoint15" state="unchanged"/>
+        <connection consumer="endpoint3" provider="endpoint22" state="unchanged"/>
+        <connection consumer="endpoint35" provider="endpoint22" state="unchanged"/>
+        <connection consumer="endpoint40" provider="endpoint16" state="unchanged"/>
+        <connection consumer="endpoint4" provider="endpoint19" state="unchanged"/>
+        <connection consumer="endpoint45" provider="endpoint17" state="unchanged"/>
+        <connection consumer="endpoint46" provider="endpoint17" state="unchanged"/>
+        <connection consumer="endpoint47" provider="endpoint17" state="unchanged"/>
+        <connection consumer="endpoint42" provider="endpoint18" state="unchanged"/>
+        <connection consumer="endpoint43" provider="endpoint18" state="unchanged"/>
+        <connection consumer="endpoint44" provider="endpoint18" state="unchanged"/>
+        <connection consumer="endpoint5" provider="endpoint31" state="unchanged"/>
+        <connection consumer="endpoint34" provider="endpoint31" state="unchanged"/>
+        <connection consumer="endpoint6" provider="endpoint24" state="unchanged"/>
+        <connection consumer="endpoint7" provider="endpoint28" state="unchanged"/>
+        <connection consumer="endpoint36" provider="endpoint28" state="unchanged"/>
+        <connection consumer="endpoint8" provider="endpoint20" state="unchanged"/>
+        <connection consumer="endpoint9" provider="endpoint27" state="unchanged"/>
+        <connection consumer="endpoint32" provider="endpoint27" state="unchanged"/>
+        <connection consumer="endpoint10" provider="endpoint26" state="unchanged"/>
+        <connection consumer="endpoint37" provider="endpoint26" state="unchanged"/>
+        <connection consumer="endpoint11" provider="endpoint30" state="unchanged"/>
+        <connection consumer="endpoint39" provider="endpoint30" state="unchanged"/>
+        <connection consumer="endpoint12" provider="endpoint23" state="unchanged"/>
+        <connection consumer="endpoint13" provider="endpoint25" state="unchanged"/>
+    </connections>
+    <porttypes>
+        <link xlink:href="../jbiServiceUnits/ElectricAppliancesModule/localhost_8080/ElectricAppliancesWebService/businessProcesses/businessPrecess1.wsdl#xpointer(/definitions/portType[@name='businessPrecess1PortType'])" xlink:type="simple"/>
+        <link xlink:href="../jbiServiceUnits/ElectricAppliancesModule/localhost_8080/ElectricAppliancesWebService/businessProcesses/businessPrecess2.wsdl#xpointer(/definitions/portType[@name='businessPrecess2PortType'])" xlink:type="simple"/>
+        <link xlink:href="../jbiServiceUnits/ElectricAppliancesModule/localhost_8080/ElectricAppliancesWebService/Service1Service.wsdl#xpointer(/definitions/portType[@name='Service1'])" xlink:type="simple"/>
+        <link xlink:href="../jbiServiceUnits/ElectricAppliancesModule/localhost_8080/ElectricAppliancesWebService/Service2Service.wsdl#xpointer(/definitions/portType[@name='Service2'])" xlink:type="simple"/>
+        <link xlink:href="../jbiServiceUnits/ElectricAppliancesModule/localhost_8080/ElectricAppliancesWebService/Service3Service.wsdl#xpointer(/definitions/portType[@name='Service3'])" xlink:type="simple"/>
+        <link xlink:href="../jbiServiceUnits/ElectricAppliancesModule/localhost_8080/ElectricAppliancesWebService/Service4Service.wsdl#xpointer(/definitions/portType[@name='Service4'])" xlink:type="simple"/>
+        <link xlink:href="../jbiServiceUnits/ElectricAppliancesModule/localhost_8080/ElectricAppliancesWebService/Service5Service.wsdl#xpointer(/definitions/portType[@name='Service5'])" xlink:type="simple"/>
+        <link xlink:href="../jbiServiceUnits/ElectricAppliancesModule/localhost_8080/ElectricAppliancesWebService/services/service1/asyncFindProduct.wsdl#xpointer(/definitions/portType[@name='findProductPortType'])" xlink:type="simple"/>
+        <link xlink:href="../jbiServiceUnits/ElectricAppliancesModule/localhost_8080/ElectricAppliancesWebService/services/service2/asyncFindCart.wsdl#xpointer(/definitions/portType[@name='findCartPortType'])" xlink:type="simple"/>
+        <link xlink:href="../jbiServiceUnits/ElectricAppliancesModule/localhost_8080/ElectricAppliancesWebService/services/service3/asyncGetAddresses.wsdl#xpointer(/definitions/portType[@name='getAddressesPortType'])" xlink:type="simple"/>
+        <link xlink:href="../jbiServiceUnits/ElectricAppliancesModule/localhost_8080/ElectricAppliancesWebService/services/service3/asyncGetCreditCards.wsdl#xpointer(/definitions/portType[@name='getCreditCardsPortType'])" xlink:type="simple"/>
+        <link xlink:href="../jbiServiceUnits/ElectricAppliancesModule/localhost_8080/ElectricAppliancesWebService/services/service3/asyncGetOrderHistory.wsdl#xpointer(/definitions/portType[@name='getOrderHistoryPortType'])" xlink:type="simple"/>
+        <link xlink:href="../jbiServiceUnits/ElectricAppliancesModule/localhost_8080/ElectricAppliancesWebService/services/service4/asyncBookProduct.wsdl#xpointer(/definitions/portType[@name='bookProductPortType'])" xlink:type="simple"/>
+        <link xlink:href="../jbiServiceUnits/ElectricAppliancesModule/localhost_8080/ElectricAppliancesWebService/services/service4/asyncCancelBookProduct.wsdl#xpointer(/definitions/portType[@name='cancelBookProductPortType'])" xlink:type="simple"/>
+        <link xlink:href="../jbiServiceUnits/ElectricAppliancesModule/localhost_8080/ElectricAppliancesWebService/services/service4/asyncIsProductAvailable.wsdl#xpointer(/definitions/portType[@name='isProductAvailablePortType'])" xlink:type="simple"/>
+        <link xlink:href="../jbiServiceUnits/ElectricAppliancesModule/localhost_8080/ElectricAppliancesWebService/services/service5/asyncCartCost.wsdl#xpointer(/definitions/portType[@name='cartCostPortType'])" xlink:type="simple"/>
+        <link xlink:href="../jbiServiceUnits/ElectricAppliancesModule/localhost_8080/ElectricAppliancesWebService/services/service5/asyncChargeCard.wsdl#xpointer(/definitions/portType[@name='chargeCardPortType'])" xlink:type="simple"/>
+        <link xlink:href="../jbiServiceUnits/ElectricAppliancesModule/localhost_8080/ElectricAppliancesWebService/services/service5/asyncRefund.wsdl#xpointer(/definitions/portType[@name='refundPortType'])" xlink:type="simple"/>
+    </porttypes>
+    <bindings>
+        <link xlink:href="../jbiServiceUnits/ElectricAppliancesModule/localhost_8080/ElectricAppliancesWebService/businessProcesses/businessPrecess1.wsdl#xpointer(/definitions/binding[@name='businessPrecess1Binding'])" xlink:type="simple"/>
+        <link xlink:href="../jbiServiceUnits/ElectricAppliancesModule/localhost_8080/ElectricAppliancesWebService/businessProcesses/businessPrecess2.wsdl#xpointer(/definitions/binding[@name='businessPrecess2Binding'])" xlink:type="simple"/>
+        <link xlink:href="../jbiServiceUnits/ElectricAppliancesModule/localhost_8080/ElectricAppliancesWebService/Service1Service.wsdl#xpointer(/definitions/binding[@name='Service1PortBinding'])" xlink:type="simple"/>
+        <link xlink:href="../jbiServiceUnits/ElectricAppliancesModule/localhost_8080/ElectricAppliancesWebService/Service2Service.wsdl#xpointer(/definitions/binding[@name='Service2PortBinding'])" xlink:type="simple"/>
+        <link xlink:href="../jbiServiceUnits/ElectricAppliancesModule/localhost_8080/ElectricAppliancesWebService/Service3Service.wsdl#xpointer(/definitions/binding[@name='Service3PortBinding'])" xlink:type="simple"/>
+        <link xlink:href="../jbiServiceUnits/ElectricAppliancesModule/localhost_8080/ElectricAppliancesWebService/Service4Service.wsdl#xpointer(/definitions/binding[@name='Service4PortBinding'])" xlink:type="simple"/>
+        <link xlink:href="../jbiServiceUnits/ElectricAppliancesModule/localhost_8080/ElectricAppliancesWebService/Service5Service.wsdl#xpointer(/definitions/binding[@name='Service5PortBinding'])" xlink:type="simple"/>
+        <link xlink:href="../jbiServiceUnits/ElectricAppliancesModule/localhost_8080/ElectricAppliancesWebService/services/service1/asyncFindProduct.wsdl#xpointer(/definitions/binding[@name='findProductBinding'])" xlink:type="simple"/>
+        <link xlink:href="../jbiServiceUnits/ElectricAppliancesModule/localhost_8080/ElectricAppliancesWebService/services/service2/asyncFindCart.wsdl#xpointer(/definitions/binding[@name='findCartBinding'])" xlink:type="simple"/>
+        <link xlink:href="../jbiServiceUnits/ElectricAppliancesModule/localhost_8080/ElectricAppliancesWebService/services/service3/asyncGetAddresses.wsdl#xpointer(/definitions/binding[@name='getAddressesBinding'])" xlink:type="simple"/>
+        <link xlink:href="../jbiServiceUnits/ElectricAppliancesModule/localhost_8080/ElectricAppliancesWebService/services/service3/asyncGetCreditCards.wsdl#xpointer(/definitions/binding[@name='getCreditCardsBinding'])" xlink:type="simple"/>
+        <link xlink:href="../jbiServiceUnits/ElectricAppliancesModule/localhost_8080/ElectricAppliancesWebService/services/service3/asyncGetOrderHistory.wsdl#xpointer(/definitions/binding[@name='getOrderHistoryBinding'])" xlink:type="simple"/>
+        <link xlink:href="../jbiServiceUnits/ElectricAppliancesModule/localhost_8080/ElectricAppliancesWebService/services/service4/asyncBookProduct.wsdl#xpointer(/definitions/binding[@name='bookProductBinding'])" xlink:type="simple"/>
+        <link xlink:href="../jbiServiceUnits/ElectricAppliancesModule/localhost_8080/ElectricAppliancesWebService/services/service4/asyncCancelBookProduct.wsdl#xpointer(/definitions/binding[@name='cancelBookProductBinding'])" xlink:type="simple"/>
+        <link xlink:href="../jbiServiceUnits/ElectricAppliancesModule/localhost_8080/ElectricAppliancesWebService/services/service4/asyncIsProductAvailable.wsdl#xpointer(/definitions/binding[@name='isProductAvailableBinding'])" xlink:type="simple"/>
+        <link xlink:href="../jbiServiceUnits/ElectricAppliancesModule/localhost_8080/ElectricAppliancesWebService/services/service5/asyncCartCost.wsdl#xpointer(/definitions/binding[@name='cartCostBinding'])" xlink:type="simple"/>
+        <link xlink:href="../jbiServiceUnits/ElectricAppliancesModule/localhost_8080/ElectricAppliancesWebService/services/service5/asyncChargeCard.wsdl#xpointer(/definitions/binding[@name='chargeCardBinding'])" xlink:type="simple"/>
+        <link xlink:href="../jbiServiceUnits/ElectricAppliancesModule/localhost_8080/ElectricAppliancesWebService/services/service5/asyncRefund.wsdl#xpointer(/definitions/binding[@name='refundBinding'])" xlink:type="simple"/>
+    </bindings>
+    <services>
+        <link xlink:href="../jbiServiceUnits/ElectricAppliancesModule/localhost_8080/ElectricAppliancesWebService/businessProcesses/businessPrecess1.wsdl#xpointer(/definitions/service[@name='businessPrecess1Service'])" xlink:type="simple"/>
+        <link xlink:href="../jbiServiceUnits/ElectricAppliancesModule/localhost_8080/ElectricAppliancesWebService/businessProcesses/businessPrecess2.wsdl#xpointer(/definitions/service[@name='businessPrecess2Service'])" xlink:type="simple"/>
+        <link xlink:href="../jbiServiceUnits/ElectricAppliancesModule/localhost_8080/ElectricAppliancesWebService/Service1Service.wsdl#xpointer(/definitions/service[@name='Service1Service'])" xlink:type="simple"/>
+        <link xlink:href="../jbiServiceUnits/ElectricAppliancesModule/localhost_8080/ElectricAppliancesWebService/Service2Service.wsdl#xpointer(/definitions/service[@name='Service2Service'])" xlink:type="simple"/>
+        <link xlink:href="../jbiServiceUnits/ElectricAppliancesModule/localhost_8080/ElectricAppliancesWebService/Service3Service.wsdl#xpointer(/definitions/service[@name='Service3Service'])" xlink:type="simple"/>
+        <link xlink:href="../jbiServiceUnits/ElectricAppliancesModule/localhost_8080/ElectricAppliancesWebService/Service4Service.wsdl#xpointer(/definitions/service[@name='Service4Service'])" xlink:type="simple"/>
+        <link xlink:href="../jbiServiceUnits/ElectricAppliancesModule/localhost_8080/ElectricAppliancesWebService/Service5Service.wsdl#xpointer(/definitions/service[@name='Service5Service'])" xlink:type="simple"/>
+        <link xlink:href="../jbiServiceUnits/ElectricAppliancesModule/localhost_8080/ElectricAppliancesWebService/services/service1/asyncFindProduct.wsdl#xpointer(/definitions/service[@name='findProductService'])" xlink:type="simple"/>
+        <link xlink:href="../jbiServiceUnits/ElectricAppliancesModule/localhost_8080/ElectricAppliancesWebService/services/service2/asyncFindCart.wsdl#xpointer(/definitions/service[@name='findCartService'])" xlink:type="simple"/>
+        <link xlink:href="../jbiServiceUnits/ElectricAppliancesModule/localhost_8080/ElectricAppliancesWebService/services/service3/asyncGetAddresses.wsdl#xpointer(/definitions/service[@name='getAddressesService'])" xlink:type="simple"/>
+        <link xlink:href="../jbiServiceUnits/ElectricAppliancesModule/localhost_8080/ElectricAppliancesWebService/services/service3/asyncGetCreditCards.wsdl#xpointer(/definitions/service[@name='getCreditCardsService'])" xlink:type="simple"/>
+        <link xlink:href="../jbiServiceUnits/ElectricAppliancesModule/localhost_8080/ElectricAppliancesWebService/services/service3/asyncGetOrderHistory.wsdl#xpointer(/definitions/service[@name='getOrderHistoryService'])" xlink:type="simple"/>
+        <link xlink:href="../jbiServiceUnits/ElectricAppliancesModule/localhost_8080/ElectricAppliancesWebService/services/service4/asyncBookProduct.wsdl#xpointer(/definitions/service[@name='bookProductService'])" xlink:type="simple"/>
+        <link xlink:href="../jbiServiceUnits/ElectricAppliancesModule/localhost_8080/ElectricAppliancesWebService/services/service4/asyncCancelBookProduct.wsdl#xpointer(/definitions/service[@name='cancelBookProductService'])" xlink:type="simple"/>
+        <link xlink:href="../jbiServiceUnits/ElectricAppliancesModule/localhost_8080/ElectricAppliancesWebService/services/service4/asyncIsProductAvailable.wsdl#xpointer(/definitions/service[@name='isProductAvailableService'])" xlink:type="simple"/>
+        <link xlink:href="../jbiServiceUnits/ElectricAppliancesModule/localhost_8080/ElectricAppliancesWebService/services/service5/asyncCartCost.wsdl#xpointer(/definitions/service[@name='cartCostService'])" xlink:type="simple"/>
+        <link xlink:href="../jbiServiceUnits/ElectricAppliancesModule/localhost_8080/ElectricAppliancesWebService/services/service5/asyncChargeCard.wsdl#xpointer(/definitions/service[@name='chargeCardService'])" xlink:type="simple"/>
+        <link xlink:href="../jbiServiceUnits/ElectricAppliancesModule/localhost_8080/ElectricAppliancesWebService/services/service5/asyncRefund.wsdl#xpointer(/definitions/service[@name='refundService'])" xlink:type="simple"/>
+    </services>
+    <regions>
+        <region name="WSDL Endpoints" width="150"/>
+        <region name="JBI Modules" width="401"/>
+        <region name="External Modules" width="200"/>
+    </regions>
+</casa>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions name="Service4ServiceServiceWrapperBook" targetNamespace="http://j2ee.netbeans.org/wsdl/ElectricAppliancesModule/Service4ServiceServiceWrapperBook"
+    xmlns="http://schemas.xmlsoap.org/wsdl/"
+    xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://j2ee.netbeans.org/wsdl/ElectricAppliancesModule/Service4ServiceServiceWrapperBook" xmlns:plnk="http://docs.oasis-open.org/wsbpel/2.0/plnktype" xmlns:ns7="http://services.gstam.labisp.tded.di.uoa.gr/">
+    <import location="Service4Service.wsdl" namespace="http://services.gstam.labisp.tded.di.uoa.gr/"/>
+    <plnk:partnerLinkType name="Service4ServiceLinkType">
+        <plnk:role name="Service4ServiceRole" portType="ns7:Service4"/>
+    </plnk:partnerLinkType>
+</definitions>
+
+
+

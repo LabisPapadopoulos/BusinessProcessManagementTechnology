@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+ Published by JAX-WS RI at http://jax-ws.dev.java.net. RI's version is JAX-WS RI 2.2-hudson-752-.
+-->
+<xs:schema xmlns:tns="http://services.gstam.labisp.tded.di.uoa.gr/" xmlns:xs="http://www.w3.org/2001/XMLSchema" version="1.0" targetNamespace="http://services.gstam.labisp.tded.di.uoa.gr/">
+<xs:element name="IOException" type="tns:IOException"/>
+<xs:element name="cartCost" type="tns:cartCost"/>
+<xs:element name="cartCostResponse" type="tns:cartCostResponse"/>
+<xs:element name="chargeCard" type="tns:chargeCard"/>
+<xs:element name="chargeCardResponse" type="tns:chargeCardResponse"/>
+<xs:element name="refund" type="tns:refund"/>
+<xs:element name="refundResponse" type="tns:refundResponse"/>
+<xs:complexType name="cartCost">
+<xs:sequence>
+<xs:element name="orderId" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="cartCostResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:double"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="IOException">
+<xs:sequence>
+<xs:element name="message" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="chargeCard">
+<xs:sequence>
+<xs:element name="creditId" type="xs:string" minOccurs="0"/>
+<xs:element name="cost" type="xs:double"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="chargeCardResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:boolean"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="refund">
+<xs:sequence>
+<xs:element name="creditId" type="xs:string" minOccurs="0"/>
+<xs:element name="cost" type="xs:double"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="refundResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:boolean"/>
+</xs:sequence>
+</xs:complexType>
+</xs:schema>

@@ -1,0 +1,69 @@
+<?xml version='1.0' encoding='UTF-8'?><!-- Published by JAX-WS RI at http://jax-ws.dev.java.net. RI's version is JAX-WS RI 2.2-hudson-752-. --><xs:schema xmlns:tns="http://services.gstam.labisp.tded.di.uoa.gr/" xmlns:xs="http://www.w3.org/2001/XMLSchema" version="1.0" targetNamespace="http://services.gstam.labisp.tded.di.uoa.gr/">
+
+<xs:element name="IOException" type="tns:IOException" />
+
+<xs:element name="findCart" type="tns:findCart" />
+
+<xs:element name="findCartResponse" type="tns:findCartResponse" />
+
+<xs:complexType name="findCart">
+<xs:sequence>
+<xs:element name="orderId" type="xs:string" minOccurs="0" />
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="findCartResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:cart" minOccurs="0" />
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="cart">
+<xs:sequence>
+<xs:element name="paymentMethod" type="tns:paymentMethod" minOccurs="0" />
+<xs:element name="productCount">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="entry" minOccurs="0" maxOccurs="unbounded">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="key" minOccurs="0" type="tns:product" />
+<xs:element name="value" minOccurs="0" type="xs:int" />
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:element name="productId" type="xs:string" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+<xs:element name="shippingAddress" type="xs:string" minOccurs="0" />
+<xs:element name="userId" type="xs:string" minOccurs="0" />
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="product">
+<xs:sequence>
+<xs:element name="availability" type="xs:boolean" minOccurs="0" />
+<xs:element name="category" type="xs:string" minOccurs="0" />
+<xs:element name="description" type="xs:string" minOccurs="0" />
+<xs:element name="name" type="xs:string" minOccurs="0" />
+<xs:element name="price" type="xs:double" />
+<xs:element name="productId" type="xs:string" minOccurs="0" />
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="IOException">
+<xs:sequence>
+<xs:element name="message" type="xs:string" minOccurs="0" />
+</xs:sequence>
+</xs:complexType>
+
+<xs:simpleType name="paymentMethod">
+<xs:restriction base="xs:string">
+<xs:enumeration value="CASH" />
+<xs:enumeration value="BANK_PAY" />
+<xs:enumeration value="CREDIT_CARD" />
+<xs:enumeration value="PAYPAL" />
+</xs:restriction>
+</xs:simpleType>
+</xs:schema>

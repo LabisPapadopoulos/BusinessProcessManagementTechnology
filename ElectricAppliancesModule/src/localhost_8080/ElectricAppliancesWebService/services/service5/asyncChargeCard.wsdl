@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions name="asyncChargeCard" targetNamespace="http://j2ee.netbeans.org/wsdl/ElectricAppliancesModule/asyncChargeCard"
+    xmlns="http://schemas.xmlsoap.org/wsdl/"
+    xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://j2ee.netbeans.org/wsdl/ElectricAppliancesModule/asyncChargeCard" xmlns:plnk="http://docs.oasis-open.org/wsbpel/2.0/plnktype" xmlns:ns8="http://xml.netbeans.org/schema/Service5" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/">
+    <types>
+        <xsd:schema targetNamespace="http://j2ee.netbeans.org/wsdl/ElectricAppliancesModule/asyncChargeCard">
+            <xsd:import schemaLocation="../../../../localhost_8080/ElectricAppliancesWebService/Service5.xsd" namespace="http://xml.netbeans.org/schema/Service5"/>
+        </xsd:schema>
+    </types>
+    <message name="chargeCardOperationRequest">
+        <part name="creditId" type="xsd:string"/>
+        <part name="cost" type="xsd:double"/>
+    </message>
+    <message name="chargeCardOperationResponse">
+        <part name="booleanValue" type="xsd:boolean"/>
+    </message>
+    <portType name="chargeCardPortType">
+        <operation name="chargeCardOperation">
+            <input name="input1" message="tns:chargeCardOperationRequest"/>
+            <output name="output1" message="tns:chargeCardOperationResponse"/>
+        </operation>
+    </portType>
+    <binding name="chargeCardBinding" type="tns:chargeCardPortType">
+        <soap:binding style="rpc" transport="http://schemas.xmlsoap.org/soap/http"/>
+        <operation name="chargeCardOperation">
+            <soap:operation/>
+            <input name="input1">
+                <soap:body use="literal" namespace="http://j2ee.netbeans.org/wsdl/ElectricAppliancesModule/asyncChargeCard"/>
+            </input>
+            <output name="output1">
+                <soap:body use="literal" namespace="http://j2ee.netbeans.org/wsdl/ElectricAppliancesModule/asyncChargeCard"/>
+            </output>
+        </operation>
+    </binding>
+    <service name="chargeCardService">
+        <port name="chargeCardPort" binding="tns:chargeCardBinding">
+            <soap:address location="http://localhost:${HttpDefaultPort}/chargeCardService/chargeCardPort"/>
+        </port>
+    </service>
+    <plnk:partnerLinkType name="chargeCard">
+        <!-- A partner link type is automatically generated when a new port type is added. Partner link types are used by BPEL processes.
+In a BPEL process, a partner link represents the interaction between the BPEL process and a partner service. Each partner link is associated with a partner link type.
+A partner link type characterizes the conversational relationship between two services. The partner link type can have one or two roles.-->
+        <plnk:role name="chargeCardPortTypeRole" portType="tns:chargeCardPortType"/>
+    </plnk:partnerLinkType>
+</definitions>

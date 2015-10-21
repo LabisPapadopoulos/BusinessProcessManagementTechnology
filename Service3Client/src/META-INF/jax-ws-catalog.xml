@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<catalog xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog" prefer="system">
+    <system systemId="file:/C:/Users/Labis/Documents/NetBeansProjects/ElectricAppliancesModule/src/localhost_8080/ElectricAppliancesWebService/Service3Service.wsdl" uri="wsdl/Service3Service.wsdl"/>
+    <system systemId="http://localhost:8080/ElectricAppliancesWebService/Service3Service?xsd=1" uri="wsdl/localhost_8080/ElectricAppliancesWebService/Service3Service.xsd_1.xsd"/>
+</catalog>
+
+

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions name="asyncCartCost" targetNamespace="http://j2ee.netbeans.org/wsdl/ElectricAppliancesModule/asyncCartCost"
+    xmlns="http://schemas.xmlsoap.org/wsdl/"
+    xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://j2ee.netbeans.org/wsdl/ElectricAppliancesModule/asyncCartCost" xmlns:plnk="http://docs.oasis-open.org/wsbpel/2.0/plnktype" xmlns:ns8="http://xml.netbeans.org/schema/Service5" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/">
+    <types>
+        <xsd:schema targetNamespace="http://j2ee.netbeans.org/wsdl/ElectricAppliancesModule/asyncCartCost">
+            <xsd:import schemaLocation="../../../../localhost_8080/ElectricAppliancesWebService/Service5.xsd" namespace="http://xml.netbeans.org/schema/Service5"/>
+        </xsd:schema>
+    </types>
+    <message name="cartCostOperationRequest">
+        <part name="orderId" type="xsd:string"/>
+    </message>
+    <message name="cartCostOperationResponse">
+        <part name="cartCostValue" type="xsd:double"/>
+    </message>
+    <portType name="cartCostPortType">
+        <operation name="cartCostOperation">
+            <input name="input1" message="tns:cartCostOperationRequest"/>
+            <output name="output1" message="tns:cartCostOperationResponse"/>
+        </operation>
+    </portType>
+    <binding name="cartCostBinding" type="tns:cartCostPortType">
+        <soap:binding style="rpc" transport="http://schemas.xmlsoap.org/soap/http"/>
+        <operation name="cartCostOperation">
+            <soap:operation/>
+            <input name="input1">
+                <soap:body use="literal" namespace="http://j2ee.netbeans.org/wsdl/ElectricAppliancesModule/asyncCartCost"/>
+            </input>
+            <output name="output1">
+                <soap:body use="literal" namespace="http://j2ee.netbeans.org/wsdl/ElectricAppliancesModule/asyncCartCost"/>
+            </output>
+        </operation>
+    </binding>
+    <service name="cartCostService">
+        <port name="cartCostPort" binding="tns:cartCostBinding">
+            <soap:address location="http://localhost:${HttpDefaultPort}/cartCostService/cartCostPort"/>
+        </port>
+    </service>
+    <plnk:partnerLinkType name="cartCost">
+        <!-- A partner link type is automatically generated when a new port type is added. Partner link types are used by BPEL processes.
+In a BPEL process, a partner link represents the interaction between the BPEL process and a partner service. Each partner link is associated with a partner link type.
+A partner link type characterizes the conversational relationship between two services. The partner link type can have one or two roles.-->
+        <plnk:role name="cartCostPortTypeRole" portType="tns:cartCostPortType"/>
+    </plnk:partnerLinkType>
+</definitions>

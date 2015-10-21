@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<catalog xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog" prefer="system">
+    <system systemId="file:/C:/Users/Labis/Documents/NetBeansProjects/ElectricAppliancesModule/src/localhost_8080/ElectricAppliancesWebService/Service2Service.wsdl" uri="xml-resources/web-service-references/Service2Service/wsdl/Service2Service.wsdl"/>
+    <system systemId="http://localhost:8080/ElectricAppliancesWebService/Service2Service?xsd=1" uri="xml-resources/web-service-references/Service2Service/wsdl/localhost_8080/ElectricAppliancesWebService/Service2Service.xsd_1.xsd"/>
+</catalog>

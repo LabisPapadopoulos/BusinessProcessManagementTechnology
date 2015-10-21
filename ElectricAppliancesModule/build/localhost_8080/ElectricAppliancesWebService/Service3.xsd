@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    targetNamespace="http://xml.netbeans.org/schema/Service3"
+    xmlns:tns="http://xml.netbeans.org/schema/Service3"
+    elementFormDefault="qualified">
+    <xsd:complexType name="creditCard">
+        <xsd:sequence>
+            <xsd:element name="creditId" type="xsd:string"></xsd:element>
+            <xsd:element name="customer" type="xsd:string"></xsd:element>
+            <xsd:element name="amount" type="xsd:double"></xsd:element>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:complexType name="creditCardList">
+        <xsd:sequence>
+            <xsd:element name="creditCard" type="tns:creditCard" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:complexType name="addressesList">
+        <xsd:sequence>
+            <xsd:element name="addresses" type="xsd:string" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    <!-- List<Order> -->
+    <xsd:complexType name="productIdList">
+        <xsd:sequence>
+            <xsd:element name="productId" type="xsd:string" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:simpleType name="orderStatus">
+        <xsd:restriction base="xsd:string" >
+            <xsd:enumeration value="SUBMITTED" />
+            <xsd:enumeration value="PENDING" />
+            <xsd:enumeration value="CANCELED" />
+        </xsd:restriction>
+    </xsd:simpleType>
+    <xsd:simpleType name="paymentMethod">
+        <xsd:restriction base="xsd:string" >
+            <xsd:enumeration value="CASH" />
+            <xsd:enumeration value="BANK_PAY" />
+            <xsd:enumeration value="CREDIT_CARD" />
+            <xsd:enumeration value="PAYPAL" />
+        </xsd:restriction>
+    </xsd:simpleType>
+    <xsd:simpleType name="shippingMethod">
+        <xsd:restriction base="xsd:string" >
+            <xsd:enumeration value="COURIER" />
+            <xsd:enumeration value="FROM_STORE" />
+        </xsd:restriction>
+    </xsd:simpleType>
+    <xsd:complexType name="order">
+        <xsd:sequence>
+            <xsd:element name="orderId" type="xsd:string"></xsd:element>
+            <xsd:element name="productId" type="tns:productIdList"></xsd:element>
+            <xsd:element name="orderStatus" type="tns:orderStatus"></xsd:element>
+            <xsd:element name="paymentMethod" type="tns:paymentMethod"></xsd:element>
+            <xsd:element name="shippingMethod" type="tns:shippingMethod"></xsd:element>
+            <xsd:element name="warehouseId" type="xsd:string"></xsd:element>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:complexType name="orderList">
+        <xsd:sequence>
+            <xsd:element name="orderList" type="tns:order" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    <!-- List<Order> -->
+    <xsd:complexType name="getCreditCards">
+        <xsd:sequence>
+            <xsd:element name="userId" type="xsd:string"></xsd:element>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:complexType name="getAddresses">
+        <xsd:sequence>
+            <xsd:element name="userId" type="xsd:string"></xsd:element>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:complexType name="getOrderHistory">
+        <xsd:sequence>
+            <xsd:element name="userId" type="xsd:string"></xsd:element>
+        </xsd:sequence>
+    </xsd:complexType>
+</xsd:schema>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<catalog xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog" prefer="system">
+    <system systemId="http://localhost:8080/ElectricAppliancesWebService/Service1Service?xsd=1" uri="localhost_8080/ElectricAppliancesWebService/Service1Service.xsd_1.xsd"/>
+    <system systemId="http://localhost:8080/ElectricAppliancesWebService/Service2Service?xsd=1" uri="localhost_8080/ElectricAppliancesWebService/Service2Service.xsd_1.xsd"/>
+    <system systemId="http://localhost:8080/ElectricAppliancesWebService/Service5Service?xsd=1" uri="localhost_8080/ElectricAppliancesWebService/Service5Service.xsd_1.xsd"/>
+    <system systemId="http://localhost:8080/ElectricAppliancesWebService/Service3Service?xsd=1" uri="localhost_8080/ElectricAppliancesWebService/Service3Service.xsd_1.xsd"/>
+    <system systemId="http://localhost:8080/ElectricAppliancesWebService/Service4Service?xsd=1" uri="localhost_8080/ElectricAppliancesWebService/Service4Service.xsd_1.xsd"/>
+</catalog>
+
+
+
+
+

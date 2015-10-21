@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?><!--
+ Published by JAX-WS RI at http://jax-ws.dev.java.net. RI's version is JAX-WS RI 2.2-hudson-752-.
+-->
+<xs:schema xmlns:tns="http://services.gstam.labisp.tded.di.uoa.gr/" xmlns:xs="http://www.w3.org/2001/XMLSchema" version="1.0" targetNamespace="http://services.gstam.labisp.tded.di.uoa.gr/">
+<xs:element name="IOException" type="tns:IOException"/>
+<xs:element name="getAddresses" type="tns:getAddresses"/>
+<xs:element name="getAddressesResponse" type="tns:getAddressesResponse"/>
+<xs:element name="getCreditCards" type="tns:getCreditCards"/>
+<xs:element name="getCreditCardsResponse" type="tns:getCreditCardsResponse"/>
+<xs:element name="getOrderHistory" type="tns:getOrderHistory"/>
+<xs:element name="getOrderHistoryResponse" type="tns:getOrderHistoryResponse"/>
+<xs:complexType name="getOrderHistory">
+<xs:sequence>
+<xs:element name="userId" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="getOrderHistoryResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:order" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="order">
+<xs:sequence>
+<xs:element name="orderId" type="xs:string" minOccurs="0"/>
+<xs:element name="orderStatus" type="tns:orderStatus" minOccurs="0"/>
+<xs:element name="paymentMethod" type="tns:paymentMethod" minOccurs="0"/>
+<xs:element name="productId" type="xs:string" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+<xs:element name="shippingMethod" type="tns:shippingMethod" minOccurs="0"/>
+<xs:element name="warehouseId" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="IOException">
+<xs:sequence>
+<xs:element name="message" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="getCreditCards">
+<xs:sequence>
+<xs:element name="userId" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="getCreditCardsResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:creditCard" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="creditCard">
+<xs:sequence>
+<xs:element name="amount" type="xs:double"/>
+<xs:element name="creditId" type="xs:string" minOccurs="0"/>
+<xs:element name="customer" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="getAddresses">
+<xs:sequence>
+<xs:element name="userId" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="getAddressesResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+<xs:simpleType name="orderStatus">
+<xs:restriction base="xs:string">
+<xs:enumeration value="SUBMITTED"/>
+<xs:enumeration value="PENDING"/>
+<xs:enumeration value="CANCELED"/>
+</xs:restriction>
+</xs:simpleType>
+<xs:simpleType name="paymentMethod">
+<xs:restriction base="xs:string">
+<xs:enumeration value="CASH"/>
+<xs:enumeration value="BANK_PAY"/>
+<xs:enumeration value="CREDIT_CARD"/>
+<xs:enumeration value="PAYPAL"/>
+</xs:restriction>
+</xs:simpleType>
+<xs:simpleType name="shippingMethod">
+<xs:restriction base="xs:string">
+<xs:enumeration value="COURIER"/>
+<xs:enumeration value="FROM_STORE"/>
+</xs:restriction>
+</xs:simpleType>
+</xs:schema>

@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<process
+    name="businessProcess1"
+    targetNamespace="http://enterprise.netbeans.org/bpel/ElectricAppliancesModule/businessProcess1"
+    xmlns="http://docs.oasis-open.org/wsbpel/2.0/process/executable"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:sxt="http://www.sun.com/wsbpel/2.0/process/executable/SUNExtension/Trace" 
+    xmlns:sxed="http://www.sun.com/wsbpel/2.0/process/executable/SUNExtension/Editor"
+    xmlns:tns="http://enterprise.netbeans.org/bpel/ElectricAppliancesModule/businessProcess1" xmlns:ns0="http://xml.netbeans.org/schema/Service2" xmlns:ns1="http://xml.netbeans.org/schema/Service2ServiceService.xsd_1">
+   <import namespace="http://j2ee.netbeans.org/wsdl/ElectricAppliancesModule/businessPrecess1" location="businessPrecess1.wsdl" importType="http://schemas.xmlsoap.org/wsdl/"/>
+   <import namespace="http://j2ee.netbeans.org/wsdl/ElectricAppliancesModule/asyncFindProduct" location="../services/service1/asyncFindProduct.wsdl" importType="http://schemas.xmlsoap.org/wsdl/"/>
+   <import namespace="http://j2ee.netbeans.org/wsdl/ElectricAppliancesModule/asyncFindCart" location="../services/service2/asyncFindCart.wsdl" importType="http://schemas.xmlsoap.org/wsdl/"/>
+   <import namespace="http://j2ee.netbeans.org/wsdl/ElectricAppliancesModule/Service2ServiceServiceWrapper" location="../Service2ServiceServiceWrapper.wsdl" importType="http://schemas.xmlsoap.org/wsdl/"/>
+   <import namespace="http://services.gstam.labisp.tded.di.uoa.gr/" location="../Service2Service.wsdl" importType="http://schemas.xmlsoap.org/wsdl/"/>
+   <import namespace="http://j2ee.netbeans.org/wsdl/ElectricAppliancesModule/asyncIsProductAvailable" location="../services/service4/asyncIsProductAvailable.wsdl" importType="http://schemas.xmlsoap.org/wsdl/"/>
+   <import namespace="http://j2ee.netbeans.org/wsdl/ElectricAppliancesModule/asyncBookProduct" location="../services/service4/asyncBookProduct.wsdl" importType="http://schemas.xmlsoap.org/wsdl/"/>
+   <import namespace="http://j2ee.netbeans.org/wsdl/ElectricAppliancesModule/asyncCartCost" location="../services/service5/asyncCartCost.wsdl" importType="http://schemas.xmlsoap.org/wsdl/"/>
+   <import namespace="http://j2ee.netbeans.org/wsdl/ElectricAppliancesModule/asyncChargeCard" location="../services/service5/asyncChargeCard.wsdl" importType="http://schemas.xmlsoap.org/wsdl/"/>
+   <partnerLinks>
+      <partnerLink name="PartnerLink2" xmlns:tns="http://j2ee.netbeans.org/wsdl/ElectricAppliancesModule/asyncFindCart" partnerLinkType="tns:findCart" partnerRole="findCartPortTypeRole"/>
+      <partnerLink name="PartnerLink3" xmlns:tns="http://j2ee.netbeans.org/wsdl/ElectricAppliancesModule/asyncIsProductAvailable" partnerLinkType="tns:isProductAvailable" partnerRole="isProductAvailablePortTypeRole"/>
+      <partnerLink name="PartnerLink4" xmlns:tns="http://j2ee.netbeans.org/wsdl/ElectricAppliancesModule/asyncBookProduct" partnerLinkType="tns:bookProduct" partnerRole="bookProductPortTypeRole"/>
+      <partnerLink name="PartnerLink5" xmlns:tns="http://j2ee.netbeans.org/wsdl/ElectricAppliancesModule/asyncCartCost" partnerLinkType="tns:cartCost" partnerRole="cartCostPortTypeRole"/>
+      <partnerLink name="PartnerLink6" xmlns:tns="http://j2ee.netbeans.org/wsdl/ElectricAppliancesModule/asyncChargeCard" partnerLinkType="tns:chargeCard" partnerRole="chargeCardPortTypeRole"/>
+      <partnerLink name="PartnerLink1" xmlns:tns="http://j2ee.netbeans.org/wsdl/ElectricAppliancesModule/businessPrecess1" partnerLinkType="tns:businessPrecess1" myRole="businessPrecess1PortTypeRole"/>
+   </partnerLinks>
+   <variables>
+      <variable name="ExecuteOut" xmlns:tns="http://j2ee.netbeans.org/wsdl/ElectricAppliancesModule/businessPrecess1" messageType="tns:executeResponse"/>
+      <variable name="ChargeCardOperationOut" xmlns:tns="http://j2ee.netbeans.org/wsdl/ElectricAppliancesModule/asyncChargeCard" messageType="tns:chargeCardOperationResponse"/>
+      <variable name="ChargeCardOperationIn" xmlns:tns="http://j2ee.netbeans.org/wsdl/ElectricAppliancesModule/asyncChargeCard" messageType="tns:chargeCardOperationRequest"/>
+      <variable name="CartCostOperationOut" xmlns:tns="http://j2ee.netbeans.org/wsdl/ElectricAppliancesModule/asyncCartCost" messageType="tns:cartCostOperationResponse"/>
+      <variable name="CartCostOperationIn" xmlns:tns="http://j2ee.netbeans.org/wsdl/ElectricAppliancesModule/asyncCartCost" messageType="tns:cartCostOperationRequest"/>
+      <variable name="FindCartOperationOut" xmlns:tns="http://j2ee.netbeans.org/wsdl/ElectricAppliancesModule/asyncFindCart" messageType="tns:findCartOperationResponse"/>
+      <variable name="FindCartOperationIn" xmlns:tns="http://j2ee.netbeans.org/wsdl/ElectricAppliancesModule/asyncFindCart" messageType="tns:findCartOperationRequest"/>
+      <variable name="FindCartOut" xmlns:tns="http://services.gstam.labisp.tded.di.uoa.gr/" messageType="tns:findCartResponse"/>
+      <variable name="FindCartIn" xmlns:tns="http://services.gstam.labisp.tded.di.uoa.gr/" messageType="tns:findCart"/>
+      <variable name="ExecuteIn" xmlns:tns="http://j2ee.netbeans.org/wsdl/ElectricAppliancesModule/businessPrecess1" messageType="tns:executeRequest"/>
+   </variables>
+   <sequence name="Sequence1">
+      <receive name="Receive1" createInstance="yes" partnerLink="PartnerLink1" operation="execute" xmlns:tns="http://j2ee.netbeans.org/wsdl/ElectricAppliancesModule/businessPrecess1" portType="tns:businessPrecess1PortType" variable="ExecuteIn"/>
+      <assign name="Assign1">
+         <copy>
+            <from variable="FindCartOperationIn" part="orderId"/>
+            <to variable="FindCartOperationIn" part="orderId"/>
+         </copy>
+         <copy>
+            <from variable="FindCartOperationOut" part="cart"/>
+            <to variable="FindCartOperationOut" part="cart"/>
+         </copy>
+         <copy>
+            <from variable="ExecuteIn" part="orderId"/>
+            <to variable="ExecuteIn" part="orderId"/>
+         </copy>
+         <copy>
+            <from variable="FindCartOut" part="parameters"/>
+            <to variable="FindCartOut" part="parameters"/>
+         </copy>
+      </assign>
+      <invoke name="Invoke1" partnerLink="PartnerLink2" operation="findCartOperation" xmlns:tns="http://j2ee.netbeans.org/wsdl/ElectricAppliancesModule/asyncFindCart" portType="tns:findCartPortType" inputVariable="FindCartOperationIn" outputVariable="FindCartOperationOut"/>
+      <assign name="Assign2">
+         <copy>
+            <from variable="FindCartOperationOut" part="cart"/>
+            <to variable="FindCartOperationOut" part="cart"/>
+         </copy>
+         <copy>
+            <from>$FindCartOperationOut.cart/ns0:userId</from>
+            <to>$FindCartOperationOut.cart/ns0:userId</to>
+         </copy>
+         <copy>
+            <from>$FindCartOperationOut.cart/ns0:productId</from>
+            <to>$FindCartOperationOut.cart/ns0:productId</to>
+         </copy>
+         <copy>
+            <from>$FindCartOperationOut.cart/ns0:productCount</from>
+            <to>$FindCartOperationOut.cart/ns0:productCount</to>
+         </copy>
+         <copy>
+            <from>$FindCartOperationOut.cart/ns0:paymentMethod</from>
+            <to>$FindCartOperationOut.cart/ns0:paymentMethod</to>
+         </copy>
+         <copy>
+            <from>$FindCartOperationOut.cart/ns0:shippingAddress</from>
+            <to>$FindCartOperationOut.cart/ns0:shippingAddress</to>
+         </copy>
+      </assign>
+      <forEach name="ForEach1" parallel="no" counterName="ForEach1Counter">
+         <startCounterValue>$FindCartOperationOut.cart/ns0:productId</startCounterValue>
+         <finalCounterValue>$FindCartOperationOut.cart/ns0:productId/ns0:productId</finalCounterValue>
+         <scope name="Scope1">
+            <variables>
+               <variable name="CartCostOperationOut" xmlns:tns="http://j2ee.netbeans.org/wsdl/ElectricAppliancesModule/asyncCartCost" messageType="tns:cartCostOperationResponse"/>
+               <variable name="CartCostOperationIn" xmlns:tns="http://j2ee.netbeans.org/wsdl/ElectricAppliancesModule/asyncCartCost" messageType="tns:cartCostOperationRequest"/>
+               <variable name="BookProductOperationOut" xmlns:tns="http://j2ee.netbeans.org/wsdl/ElectricAppliancesModule/asyncBookProduct" messageType="tns:bookProductOperationResponse"/>
+               <variable name="BookProductOperationIn" xmlns:tns="http://j2ee.netbeans.org/wsdl/ElectricAppliancesModule/asyncBookProduct" messageType="tns:bookProductOperationRequest"/>
+               <variable name="IsProductAvailableOperationOut" xmlns:tns="http://j2ee.netbeans.org/wsdl/ElectricAppliancesModule/asyncIsProductAvailable" messageType="tns:isProductAvailableOperationResponse"/>
+               <variable name="IsProductAvailableOperationIn" xmlns:tns="http://j2ee.netbeans.org/wsdl/ElectricAppliancesModule/asyncIsProductAvailable" messageType="tns:isProductAvailableOperationRequest"/>
+            </variables>
+               <flow name="Flow1" xmlns:tns="http://j2ee.netbeans.org/wsdl/ElectricAppliancesModule/asyncBookProduct">
+                  <sequence name="Sequence2">
+                        <assign name="Assign3">
+                              <copy>
+                                    <from>$FindCartOperationOut.cart/ns0:productId</from>
+                                       <to>$FindCartOperationOut.cart/ns0:productId</to>
+                                 </copy>
+                                 <copy>
+                                    <from>$FindCartOperationOut.cart/ns0:productId/ns0:productId</from>
+                                       <to>$FindCartOperationOut.cart/ns0:productId/ns0:productId</to>
+                                 </copy>
+                           <copy>
+                              <from variable="CartCostOperationOut" part="cartCostValue"/>
+                              <to variable="CartCostOperationOut" part="cartCostValue"/>
+                           </copy>
+                           <copy>
+                              <from variable="CartCostOperationIn" part="orderId"/>
+                              <to variable="CartCostOperationIn" part="orderId"/>
+                           </copy>
+                        </assign>
+                           <invoke name="Invoke2" partnerLink="PartnerLink3" operation="isProductAvailableOperation" xmlns:tns="http://j2ee.netbeans.org/wsdl/ElectricAppliancesModule/asyncIsProductAvailable" portType="tns:isProductAvailablePortType" inputVariable="IsProductAvailableOperationIn" outputVariable="IsProductAvailableOperationOut"/>
+                           <assign name="Assign4">
+                              <copy>
+                                    <from variable="IsProductAvailableOperationOut" part="booleanValue"/>
+                                       <to variable="IsProductAvailableOperationOut" part="booleanValue"/>
+                                 </copy>
+                              <copy>
+                                 <from variable="CartCostOperationOut" part="cartCostValue"/>
+                                 <to variable="CartCostOperationOut" part="cartCostValue"/>
+                              </copy>
+                           </assign>
+                     </sequence>
+                     <sequence name="Sequence3">
+                        <assign name="Assign5">
+                              <copy>
+                                    <from>$FindCartOperationOut.cart/ns0:productId</from>
+                                       <to>$FindCartOperationOut.cart/ns0:productId</to>
+                                 </copy>
+                                 <copy>
+                                    <from>$FindCartOperationOut.cart/ns0:productId/ns0:productId</from>
+                                       <to>$FindCartOperationOut.cart/ns0:productId/ns0:productId</to>
+                                 </copy>
+                           <copy>
+                              <from variable="CartCostOperationOut" part="cartCostValue"/>
+                              <to variable="CartCostOperationOut" part="cartCostValue"/>
+                           </copy>
+                           <copy>
+                              <from variable="CartCostOperationIn" part="orderId"/>
+                              <to variable="CartCostOperationIn" part="orderId"/>
+                           </copy>
+                        </assign>
+                           <invoke name="Invoke3" partnerLink="PartnerLink4" operation="bookProductOperation" xmlns:tns="http://j2ee.netbeans.org/wsdl/ElectricAppliancesModule/asyncBookProduct" portType="tns:bookProductPortType" inputVariable="BookProductOperationIn" outputVariable="BookProductOperationOut"/>
+                           <assign name="Assign6">
+                              <copy>
+                                    <from variable="BookProductOperationOut" part="booleanValue"/>
+                                       <to variable="BookProductOperationOut" part="booleanValue"/>
+                                 </copy>
+                              <copy>
+                                 <from variable="CartCostOperationOut" part="cartCostValue"/>
+                                 <to variable="CartCostOperationOut" part="cartCostValue"/>
+                              </copy>
+                           </assign>
+                     </sequence>
+               </flow>
+         </scope>
+      </forEach>
+      <assign name="Assign7">
+         <copy>
+            <from>$FindCartIn.parameters/orderId</from>
+            <to>$FindCartIn.parameters/orderId</to>
+         </copy>
+      </assign>
+      <invoke name="Invoke4" partnerLink="PartnerLink5" operation="cartCostOperation" xmlns:tns="http://j2ee.netbeans.org/wsdl/ElectricAppliancesModule/asyncCartCost" portType="tns:cartCostPortType" inputVariable="CartCostOperationIn" outputVariable="CartCostOperationOut"/>
+      <assign name="Assign8">
+         <copy>
+            <from variable="CartCostOperationOut" part="cartCostValue"/>
+            <to variable="CartCostOperationOut" part="cartCostValue"/>
+         </copy>
+         <copy>
+            <from variable="ChargeCardOperationIn" part="creditId"/>
+            <to variable="ChargeCardOperationIn" part="creditId"/>
+         </copy>
+         <copy>
+            <from variable="ChargeCardOperationIn" part="cost"/>
+            <to variable="ChargeCardOperationIn" part="cost"/>
+         </copy>
+      </assign>
+      <invoke name="Invoke5" partnerLink="PartnerLink6" operation="chargeCardOperation" xmlns:tns="http://j2ee.netbeans.org/wsdl/ElectricAppliancesModule/asyncChargeCard" portType="tns:chargeCardPortType" inputVariable="ChargeCardOperationIn" outputVariable="ChargeCardOperationOut"/>
+      <assign name="Assign9">
+         <copy>
+            <from variable="ChargeCardOperationOut" part="booleanValue"/>
+            <to variable="ChargeCardOperationOut" part="booleanValue"/>
+         </copy>
+      </assign>
+      <reply name="Reply1" partnerLink="PartnerLink1" operation="execute" xmlns:tns="http://j2ee.netbeans.org/wsdl/ElectricAppliancesModule/businessPrecess1" portType="tns:businessPrecess1PortType" variable="ExecuteOut"/>
+   </sequence>
+</process>
+
+
+
+
+
+

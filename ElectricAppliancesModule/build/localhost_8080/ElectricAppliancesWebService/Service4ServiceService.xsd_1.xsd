@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+ Published by JAX-WS RI at http://jax-ws.dev.java.net. RI's version is JAX-WS RI 2.2-hudson-752-.
+-->
+<xs:schema xmlns:tns="http://services.gstam.labisp.tded.di.uoa.gr/" xmlns:xs="http://www.w3.org/2001/XMLSchema" version="1.0" targetNamespace="http://services.gstam.labisp.tded.di.uoa.gr/">
+<xs:element name="IOException" type="tns:IOException"/>
+<xs:element name="bookProduct" type="tns:bookProduct"/>
+<xs:element name="bookProductResponse" type="tns:bookProductResponse"/>
+<xs:element name="cancelBookProduct" type="tns:cancelBookProduct"/>
+<xs:element name="cancelBookProductResponse" type="tns:cancelBookProductResponse"/>
+<xs:element name="isProductAvailable" type="tns:isProductAvailable"/>
+<xs:element name="isProductAvailableResponse" type="tns:isProductAvailableResponse"/>
+<xs:complexType name="isProductAvailable">
+<xs:sequence>
+<xs:element name="productId" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="isProductAvailableResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:boolean"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="IOException">
+<xs:sequence>
+<xs:element name="message" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="bookProduct">
+<xs:sequence>
+<xs:element name="productId" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="bookProductResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:boolean"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="cancelBookProduct">
+<xs:sequence>
+<xs:element name="productId" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="cancelBookProductResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:boolean"/>
+</xs:sequence>
+</xs:complexType>
+</xs:schema>

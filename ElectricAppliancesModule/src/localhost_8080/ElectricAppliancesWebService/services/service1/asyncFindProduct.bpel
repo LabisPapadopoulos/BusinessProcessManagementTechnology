@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<process
+    name="asyncFindProduct"
+    targetNamespace="http://enterprise.netbeans.org/bpel/ElectricAppliancesModule/asyncFindProduct"
+    xmlns="http://docs.oasis-open.org/wsbpel/2.0/process/executable"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:sxt="http://www.sun.com/wsbpel/2.0/process/executable/SUNExtension/Trace" 
+    xmlns:sxed="http://www.sun.com/wsbpel/2.0/process/executable/SUNExtension/Editor"
+    xmlns:tns="http://enterprise.netbeans.org/bpel/ElectricAppliancesModule/asyncFindProduct">
+    <import namespace="http://j2ee.netbeans.org/wsdl/ElectricAppliancesModule/asyncFindProduct" location="asyncFindProduct.wsdl" importType="http://schemas.xmlsoap.org/wsdl/"/>
+    <import namespace="http://j2ee.netbeans.org/wsdl/ElectricAppliancesModule/Service1ServiceWrapper" location="../../Service1ServiceServiceWrapper.wsdl" importType="http://schemas.xmlsoap.org/wsdl/"/>
+    <import namespace="http://services.gstam.labisp.tded.di.uoa.gr/" location="../../Service1Service.wsdl" importType="http://schemas.xmlsoap.org/wsdl/"/>
+    <partnerLinks>
+        <partnerLink name="PartnerLink2" xmlns:tns="http://j2ee.netbeans.org/wsdl/ElectricAppliancesModule/Service1ServiceWrapper" partnerLinkType="tns:Service1ServiceLinkType" partnerRole="Service1ServiceRole"/>
+        <partnerLink name="PartnerLink1" xmlns:tns="http://j2ee.netbeans.org/wsdl/ElectricAppliancesModule/asyncFindProduct" partnerLinkType="tns:findProduct" myRole="findProductPortTypeRole"/>
+    </partnerLinks>
+    <variables>
+        <variable name="FindProductOperationOut" xmlns:tns="http://j2ee.netbeans.org/wsdl/ElectricAppliancesModule/asyncFindProduct" messageType="tns:findProductOperationResponse"/>
+        <variable name="FindProductOut" xmlns:tns="http://services.gstam.labisp.tded.di.uoa.gr/" messageType="tns:findProductResponse"/>
+        <variable name="FindProductIn" xmlns:tns="http://services.gstam.labisp.tded.di.uoa.gr/" messageType="tns:findProduct"/>
+        <variable name="FindProductOperationIn" xmlns:tns="http://j2ee.netbeans.org/wsdl/ElectricAppliancesModule/asyncFindProduct" messageType="tns:findProductOperationRequest"/>
+    </variables>
+    <sequence>
+        <receive name="Receive1" createInstance="yes" partnerLink="PartnerLink1" operation="findProductOperation" xmlns:tns="http://j2ee.netbeans.org/wsdl/ElectricAppliancesModule/asyncFindProduct" portType="tns:findProductPortType" variable="FindProductOperationIn"/>
+        <assign name="Assign1">
+            <copy>
+                <from variable="FindProductOperationIn" part="productId"/>
+                <to variable="FindProductOperationIn" part="productId"/>
+            </copy>
+        </assign>
+        <invoke name="Invoke1" partnerLink="PartnerLink2" operation="findProduct" xmlns:tns="http://services.gstam.labisp.tded.di.uoa.gr/" portType="tns:Service1" inputVariable="FindProductIn" outputVariable="FindProductOut"/>
+        <assign name="Assign2">
+            <copy>
+                <from variable="FindProductOut" part="parameters"/>
+                <to variable="FindProductOut" part="parameters"/>
+            </copy>
+        </assign>
+        <reply name="Reply1" partnerLink="PartnerLink1" operation="findProductOperation" xmlns:tns="http://j2ee.netbeans.org/wsdl/ElectricAppliancesModule/asyncFindProduct" portType="tns:findProductPortType" variable="FindProductOperationOut"/>
+    </sequence>
+</process>
+

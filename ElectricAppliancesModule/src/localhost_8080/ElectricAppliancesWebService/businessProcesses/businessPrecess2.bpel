@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<process
+    name="businessPrecess2"
+    targetNamespace="http://enterprise.netbeans.org/bpel/ElectricAppliancesModule/businessPrecess2"
+    xmlns="http://docs.oasis-open.org/wsbpel/2.0/process/executable"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:sxt="http://www.sun.com/wsbpel/2.0/process/executable/SUNExtension/Trace" 
+    xmlns:sxed="http://www.sun.com/wsbpel/2.0/process/executable/SUNExtension/Editor"
+    xmlns:tns="http://enterprise.netbeans.org/bpel/ElectricAppliancesModule/businessPrecess2">
+    <import namespace="http://j2ee.netbeans.org/wsdl/ElectricAppliancesModule/businessPrecess2" location="businessPrecess2.wsdl" importType="http://schemas.xmlsoap.org/wsdl/"/>
+    <import namespace="http://j2ee.netbeans.org/wsdl/ElectricAppliancesModule/asyncCancelBookProduct" location="../services/service4/asyncCancelBookProduct.wsdl" importType="http://schemas.xmlsoap.org/wsdl/"/>
+    <import namespace="http://j2ee.netbeans.org/wsdl/ElectricAppliancesModule/asyncCartCost" location="../services/service5/asyncCartCost.wsdl" importType="http://schemas.xmlsoap.org/wsdl/"/>
+    <import namespace="http://j2ee.netbeans.org/wsdl/ElectricAppliancesModule/asyncRefund" location="../services/service5/asyncRefund.wsdl" importType="http://schemas.xmlsoap.org/wsdl/"/>
+    <partnerLinks>
+        <partnerLink name="PartnerLink2" xmlns:tns="http://j2ee.netbeans.org/wsdl/ElectricAppliancesModule/asyncCancelBookProduct" partnerLinkType="tns:cancelBookProduct" partnerRole="cancelBookProductPortTypeRole"/>
+        <partnerLink name="PartnerLink3" xmlns:tns="http://j2ee.netbeans.org/wsdl/ElectricAppliancesModule/asyncCartCost" partnerLinkType="tns:cartCost" partnerRole="cartCostPortTypeRole"/>
+        <partnerLink name="PartnerLink4" xmlns:tns="http://j2ee.netbeans.org/wsdl/ElectricAppliancesModule/asyncRefund" partnerLinkType="tns:refund" partnerRole="refundPortTypeRole"/>
+        <partnerLink name="PartnerLink1" xmlns:tns="http://j2ee.netbeans.org/wsdl/ElectricAppliancesModule/businessPrecess2" partnerLinkType="tns:businessPrecess2" myRole="businessPrecess2PortTypeRole"/>
+    </partnerLinks>
+    <variables>
+        <variable name="ExecuteOut" xmlns:tns="http://j2ee.netbeans.org/wsdl/ElectricAppliancesModule/businessPrecess2" messageType="tns:executeResponse"/>
+        <variable name="RefundOperationOut" xmlns:tns="http://j2ee.netbeans.org/wsdl/ElectricAppliancesModule/asyncRefund" messageType="tns:refundOperationResponse"/>
+        <variable name="RefundOperationIn" xmlns:tns="http://j2ee.netbeans.org/wsdl/ElectricAppliancesModule/asyncRefund" messageType="tns:refundOperationRequest"/>
+        <variable name="CartCostOperationOut" xmlns:tns="http://j2ee.netbeans.org/wsdl/ElectricAppliancesModule/asyncCartCost" messageType="tns:cartCostOperationResponse"/>
+        <variable name="CartCostOperationIn" xmlns:tns="http://j2ee.netbeans.org/wsdl/ElectricAppliancesModule/asyncCartCost" messageType="tns:cartCostOperationRequest"/>
+        <variable name="CancelBookProductOperationOut" xmlns:tns="http://j2ee.netbeans.org/wsdl/ElectricAppliancesModule/asyncCancelBookProduct" messageType="tns:cancelBookProductOperationResponse"/>
+        <variable name="CancelBookProductOperationIn" xmlns:tns="http://j2ee.netbeans.org/wsdl/ElectricAppliancesModule/asyncCancelBookProduct" messageType="tns:cancelBookProductOperationRequest"/>
+        <variable name="ExecuteIn" xmlns:tns="http://j2ee.netbeans.org/wsdl/ElectricAppliancesModule/businessPrecess2" messageType="tns:executeRequest"/>
+    </variables>
+    <sequence name="Sequence">
+        <receive name="Receive1" createInstance="yes" partnerLink="PartnerLink1" operation="execute" xmlns:tns="http://j2ee.netbeans.org/wsdl/ElectricAppliancesModule/businessPrecess2" portType="tns:businessPrecess2PortType" variable="ExecuteIn"/>
+        <flow name="Flow1">
+            <sequence name="Sequence1">
+                <assign name="Assign1">
+                    <copy>
+                        <from variable="ExecuteIn" part="orderId"/>
+                        <to variable="ExecuteIn" part="orderId"/>
+                    </copy>
+                </assign>
+                <invoke name="Invoke1" partnerLink="PartnerLink2" operation="cancelBookProductOperation" xmlns:tns="http://j2ee.netbeans.org/wsdl/ElectricAppliancesModule/asyncCancelBookProduct" portType="tns:cancelBookProductPortType" inputVariable="CancelBookProductOperationIn" outputVariable="CancelBookProductOperationOut"/>
+                <assign name="Assign2">
+                    <copy>
+                        <from variable="CancelBookProductOperationOut" part="booleanValue"/>
+                        <to variable="CancelBookProductOperationOut" part="booleanValue"/>
+                    </copy>
+                </assign>
+            </sequence>
+        </flow>
+        <invoke name="Invoke2" partnerLink="PartnerLink3" operation="cartCostOperation" xmlns:tns="http://j2ee.netbeans.org/wsdl/ElectricAppliancesModule/asyncCartCost" portType="tns:cartCostPortType" inputVariable="CartCostOperationIn" outputVariable="CartCostOperationOut"/>
+        <assign name="Assign3">
+            <copy>
+                <from variable="CartCostOperationOut" part="cartCostValue"/>
+                <to variable="CartCostOperationOut" part="cartCostValue"/>
+            </copy>
+            <copy>
+                <from variable="RefundOperationIn" part="creditId"/>
+                <to variable="RefundOperationIn" part="creditId"/>
+            </copy>
+            <copy>
+                <from variable="RefundOperationIn" part="cost"/>
+                <to variable="RefundOperationIn" part="cost"/>
+            </copy>
+        </assign>
+        <invoke name="Invoke3" partnerLink="PartnerLink4" operation="refundOperation" xmlns:tns="http://j2ee.netbeans.org/wsdl/ElectricAppliancesModule/asyncRefund" portType="tns:refundPortType" inputVariable="RefundOperationIn" outputVariable="RefundOperationOut"/>
+        <assign name="Assign4">
+            <copy>
+                <from variable="RefundOperationOut" part="booleanValue"/>
+                <to variable="RefundOperationOut" part="booleanValue"/>
+            </copy>
+        </assign>
+        <reply name="Reply1" partnerLink="PartnerLink1" operation="execute" xmlns:tns="http://j2ee.netbeans.org/wsdl/ElectricAppliancesModule/businessPrecess2" portType="tns:businessPrecess2PortType" variable="ExecuteOut"/>
+    </sequence>
+</process>
+
+
+

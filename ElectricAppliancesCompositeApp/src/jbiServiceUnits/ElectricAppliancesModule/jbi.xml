@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<jbi xmlns="http://java.sun.com/xml/ns/jbi" xmlns:ns0="http://enterprise.netbeans.org/bpel/ElectricAppliancesModule/businessPrecess2" xmlns:ns1="http://j2ee.netbeans.org/wsdl/ElectricAppliancesModule/asyncCancelBookProduct" xmlns:ns10="http://j2ee.netbeans.org/wsdl/ElectricAppliancesModule/businessPrecess1" xmlns:ns11="http://enterprise.netbeans.org/bpel/ElectricAppliancesModule/asyncFindProduct" xmlns:ns12="http://services.gstam.labisp.tded.di.uoa.gr/" xmlns:ns13="http://j2ee.netbeans.org/wsdl/ElectricAppliancesModule/asyncFindProduct" xmlns:ns14="http://enterprise.netbeans.org/bpel/ElectricAppliancesModule/asyncFindCart" xmlns:ns15="http://enterprise.netbeans.org/bpel/ElectricAppliancesModule/asyncGetAddresses" xmlns:ns16="http://j2ee.netbeans.org/wsdl/ElectricAppliancesModule/asyncGetAddresses" xmlns:ns17="http://enterprise.netbeans.org/bpel/ElectricAppliancesModule/asyncGetCreditCards" xmlns:ns18="http://j2ee.netbeans.org/wsdl/ElectricAppliancesModule/asyncGetCreditCards" xmlns:ns19="http://enterprise.netbeans.org/bpel/ElectricAppliancesModule/asyncGetOrderHistory" xmlns:ns2="http://j2ee.netbeans.org/wsdl/ElectricAppliancesModule/asyncCartCost" xmlns:ns20="http://j2ee.netbeans.org/wsdl/ElectricAppliancesModule/asyncGetOrderHistory" xmlns:ns21="http://enterprise.netbeans.org/bpel/ElectricAppliancesModule/asyncBookProduct" xmlns:ns22="http://enterprise.netbeans.org/bpel/ElectricAppliancesModule/asyncCancelBookProduct" xmlns:ns23="http://enterprise.netbeans.org/bpel/ElectricAppliancesModule/asyncIsProductAvailable" xmlns:ns24="http://enterprise.netbeans.org/bpel/ElectricAppliancesModule/asyncCartCost" xmlns:ns25="http://enterprise.netbeans.org/bpel/ElectricAppliancesModule/asyncChargeCard" xmlns:ns26="http://enterprise.netbeans.org/bpel/ElectricAppliancesModule/asyncRefund" xmlns:ns27="http://www.sun.com/jbi/descriptor/service-unit" xmlns:ns3="http://j2ee.netbeans.org/wsdl/ElectricAppliancesModule/asyncRefund" xmlns:ns4="http://j2ee.netbeans.org/wsdl/ElectricAppliancesModule/businessPrecess2" xmlns:ns5="http://enterprise.netbeans.org/bpel/ElectricAppliancesModule/businessProcess1" xmlns:ns6="http://j2ee.netbeans.org/wsdl/ElectricAppliancesModule/asyncFindCart" xmlns:ns7="http://j2ee.netbeans.org/wsdl/ElectricAppliancesModule/asyncIsProductAvailable" xmlns:ns8="http://j2ee.netbeans.org/wsdl/ElectricAppliancesModule/asyncBookProduct" xmlns:ns9="http://j2ee.netbeans.org/wsdl/ElectricAppliancesModule/asyncChargeCard" version="1.0">
+    <services binding-component="false">
+        <provides endpoint-name="businessPrecess2PortTypeRole_myRole" interface-name="ns4:businessPrecess2PortType" service-name="ns0:PartnerLink1">
+            <ns27:display-name>PartnerLink1</ns27:display-name>
+            <ns27:process-name>businessPrecess2</ns27:process-name>
+            <ns27:file-path>localhost_8080\ElectricAppliancesWebService\businessProcesses\businessPrecess2.bpel</ns27:file-path>
+        </provides>
+        <provides endpoint-name="businessPrecess1PortTypeRole_myRole" interface-name="ns10:businessPrecess1PortType" service-name="ns5:PartnerLink1">
+            <ns27:display-name>PartnerLink1</ns27:display-name>
+            <ns27:process-name>businessProcess1</ns27:process-name>
+            <ns27:file-path>localhost_8080\ElectricAppliancesWebService\businessProcesses\businessProcess1.bpel</ns27:file-path>
+        </provides>
+        <provides endpoint-name="findProductPortTypeRole_myRole" interface-name="ns13:findProductPortType" service-name="ns11:PartnerLink1">
+            <ns27:display-name>PartnerLink1</ns27:display-name>
+            <ns27:process-name>asyncFindProduct</ns27:process-name>
+            <ns27:file-path>localhost_8080\ElectricAppliancesWebService\services\service1\asyncFindProduct.bpel</ns27:file-path>
+        </provides>
+        <provides endpoint-name="findCartPortTypeRole_myRole" interface-name="ns6:findCartPortType" service-name="ns14:PartnerLink1">
+            <ns27:display-name>PartnerLink1</ns27:display-name>
+            <ns27:process-name>asyncFindCart</ns27:process-name>
+            <ns27:file-path>localhost_8080\ElectricAppliancesWebService\services\service2\asyncFindCart.bpel</ns27:file-path>
+        </provides>
+        <provides endpoint-name="getAddressesPortTypeRole_myRole" interface-name="ns16:getAddressesPortType" service-name="ns15:PartnerLink1">
+            <ns27:display-name>PartnerLink1</ns27:display-name>
+            <ns27:process-name>asyncGetAddresses</ns27:process-name>
+            <ns27:file-path>localhost_8080\ElectricAppliancesWebService\services\service3\asyncGetAddresses.bpel</ns27:file-path>
+        </provides>
+        <provides endpoint-name="getCreditCardsPortTypeRole_myRole" interface-name="ns18:getCreditCardsPortType" service-name="ns17:PartnerLink1">
+            <ns27:display-name>PartnerLink1</ns27:display-name>
+            <ns27:process-name>asyncGetCreditCards</ns27:process-name>
+            <ns27:file-path>localhost_8080\ElectricAppliancesWebService\services\service3\asyncGetCreditCards.bpel</ns27:file-path>
+        </provides>
+        <provides endpoint-name="getOrderHistoryPortTypeRole_myRole" interface-name="ns20:getOrderHistoryPortType" service-name="ns19:PartnerLink1">
+            <ns27:display-name>PartnerLink1</ns27:display-name>
+            <ns27:process-name>asyncGetOrderHistory</ns27:process-name>
+            <ns27:file-path>localhost_8080\ElectricAppliancesWebService\services\service3\asyncGetOrderHistory.bpel</ns27:file-path>
+        </provides>
+        <provides endpoint-name="bookProductPortTypeRole_myRole" interface-name="ns8:bookProductPortType" service-name="ns21:PartnerLink1">
+            <ns27:display-name>PartnerLink1</ns27:display-name>
+            <ns27:process-name>asyncBookProduct</ns27:process-name>
+            <ns27:file-path>localhost_8080\ElectricAppliancesWebService\services\service4\asyncBookProduct.bpel</ns27:file-path>
+        </provides>
+        <provides endpoint-name="cancelBookProductPortTypeRole_myRole" interface-name="ns1:cancelBookProductPortType" service-name="ns22:PartnerLink1">
+            <ns27:display-name>PartnerLink1</ns27:display-name>
+            <ns27:process-name>asyncCancelBookProduct</ns27:process-name>
+            <ns27:file-path>localhost_8080\ElectricAppliancesWebService\services\service4\asyncCancelBookProduct.bpel</ns27:file-path>
+        </provides>
+        <provides endpoint-name="isProductAvailablePortTypeRole_myRole" interface-name="ns7:isProductAvailablePortType" service-name="ns23:PartnerLink1">
+            <ns27:display-name>PartnerLink1</ns27:display-name>
+            <ns27:process-name>asyncIsProductAvailable</ns27:process-name>
+            <ns27:file-path>localhost_8080\ElectricAppliancesWebService\services\service4\asyncIsProductAvailable.bpel</ns27:file-path>
+        </provides>
+        <provides endpoint-name="cartCostPortTypeRole_myRole" interface-name="ns2:cartCostPortType" service-name="ns24:PartnerLink1">
+            <ns27:display-name>PartnerLink1</ns27:display-name>
+            <ns27:process-name>asyncCartCost</ns27:process-name>
+            <ns27:file-path>localhost_8080\ElectricAppliancesWebService\services\service5\asyncCartCost.bpel</ns27:file-path>
+        </provides>
+        <provides endpoint-name="chargeCardPortTypeRole_myRole" interface-name="ns9:chargeCardPortType" service-name="ns25:PartnerLink1">
+            <ns27:display-name>PartnerLink1</ns27:display-name>
+            <ns27:process-name>asyncChargeCard</ns27:process-name>
+            <ns27:file-path>localhost_8080\ElectricAppliancesWebService\services\service5\asyncChargeCard.bpel</ns27:file-path>
+        </provides>
+        <provides endpoint-name="refundPortTypeRole_myRole" interface-name="ns3:refundPortType" service-name="ns26:PartnerLink1">
+            <ns27:display-name>PartnerLink1</ns27:display-name>
+            <ns27:process-name>asyncRefund</ns27:process-name>
+            <ns27:file-path>localhost_8080\ElectricAppliancesWebService\services\service5\asyncRefund.bpel</ns27:file-path>
+        </provides>
+        <consumes endpoint-name="cancelBookProductPortTypeRole_partnerRole" interface-name="ns1:cancelBookProductPortType" service-name="ns0:PartnerLink2">
+            <ns27:display-name>PartnerLink2</ns27:display-name>
+            <ns27:process-name>businessPrecess2</ns27:process-name>
+            <ns27:file-path>localhost_8080\ElectricAppliancesWebService\businessProcesses\businessPrecess2.bpel</ns27:file-path>
+        </consumes>
+        <consumes endpoint-name="cartCostPortTypeRole_partnerRole" interface-name="ns2:cartCostPortType" service-name="ns0:PartnerLink3">
+            <ns27:display-name>PartnerLink3</ns27:display-name>
+            <ns27:process-name>businessPrecess2</ns27:process-name>
+            <ns27:file-path>localhost_8080\ElectricAppliancesWebService\businessProcesses\businessPrecess2.bpel</ns27:file-path>
+        </consumes>
+        <consumes endpoint-name="refundPortTypeRole_partnerRole" interface-name="ns3:refundPortType" service-name="ns0:PartnerLink4">
+            <ns27:display-name>PartnerLink4</ns27:display-name>
+            <ns27:process-name>businessPrecess2</ns27:process-name>
+            <ns27:file-path>localhost_8080\ElectricAppliancesWebService\businessProcesses\businessPrecess2.bpel</ns27:file-path>
+        </consumes>
+        <consumes endpoint-name="findCartPortTypeRole_partnerRole" interface-name="ns6:findCartPortType" service-name="ns5:PartnerLink2">
+            <ns27:display-name>PartnerLink2</ns27:display-name>
+            <ns27:process-name>businessProcess1</ns27:process-name>
+            <ns27:file-path>localhost_8080\ElectricAppliancesWebService\businessProcesses\businessProcess1.bpel</ns27:file-path>
+        </consumes>
+        <consumes endpoint-name="isProductAvailablePortTypeRole_partnerRole" interface-name="ns7:isProductAvailablePortType" service-name="ns5:PartnerLink3">
+            <ns27:display-name>PartnerLink3</ns27:display-name>
+            <ns27:process-name>businessProcess1</ns27:process-name>
+            <ns27:file-path>localhost_8080\ElectricAppliancesWebService\businessProcesses\businessProcess1.bpel</ns27:file-path>
+        </consumes>
+        <consumes endpoint-name="bookProductPortTypeRole_partnerRole" interface-name="ns8:bookProductPortType" service-name="ns5:PartnerLink4">
+            <ns27:display-name>PartnerLink4</ns27:display-name>
+            <ns27:process-name>businessProcess1</ns27:process-name>
+            <ns27:file-path>localhost_8080\ElectricAppliancesWebService\businessProcesses\businessProcess1.bpel</ns27:file-path>
+        </consumes>
+        <consumes endpoint-name="cartCostPortTypeRole_partnerRole" interface-name="ns2:cartCostPortType" service-name="ns5:PartnerLink5">
+            <ns27:display-name>PartnerLink5</ns27:display-name>
+            <ns27:process-name>businessProcess1</ns27:process-name>
+            <ns27:file-path>localhost_8080\ElectricAppliancesWebService\businessProcesses\businessProcess1.bpel</ns27:file-path>
+        </consumes>
+        <consumes endpoint-name="chargeCardPortTypeRole_partnerRole" interface-name="ns9:chargeCardPortType" service-name="ns5:PartnerLink6">
+            <ns27:display-name>PartnerLink6</ns27:display-name>
+            <ns27:process-name>businessProcess1</ns27:process-name>
+            <ns27:file-path>localhost_8080\ElectricAppliancesWebService\businessProcesses\businessProcess1.bpel</ns27:file-path>
+        </consumes>
+        <consumes endpoint-name="Service1ServiceRole_partnerRole" interface-name="ns12:Service1" service-name="ns11:PartnerLink2">
+            <ns27:display-name>PartnerLink2</ns27:display-name>
+            <ns27:process-name>asyncFindProduct</ns27:process-name>
+            <ns27:file-path>localhost_8080\ElectricAppliancesWebService\services\service1\asyncFindProduct.bpel</ns27:file-path>
+        </consumes>
+        <consumes endpoint-name="Service2ServiceRole_partnerRole" interface-name="ns12:Service2" service-name="ns14:PartnerLink2">
+            <ns27:display-name>PartnerLink2</ns27:display-name>
+            <ns27:process-name>asyncFindCart</ns27:process-name>
+            <ns27:file-path>localhost_8080\ElectricAppliancesWebService\services\service2\asyncFindCart.bpel</ns27:file-path>
+        </consumes>
+        <consumes endpoint-name="Service3ServiceRole_partnerRole" interface-name="ns12:Service3" service-name="ns15:PartnerLink2">
+            <ns27:display-name>PartnerLink2</ns27:display-name>
+            <ns27:process-name>asyncGetAddresses</ns27:process-name>
+            <ns27:file-path>localhost_8080\ElectricAppliancesWebService\services\service3\asyncGetAddresses.bpel</ns27:file-path>
+        </consumes>
+        <consumes endpoint-name="Service3ServiceRole_partnerRole" interface-name="ns12:Service3" service-name="ns17:PartnerLink2">
+            <ns27:display-name>PartnerLink2</ns27:display-name>
+            <ns27:process-name>asyncGetCreditCards</ns27:process-name>
+            <ns27:file-path>localhost_8080\ElectricAppliancesWebService\services\service3\asyncGetCreditCards.bpel</ns27:file-path>
+        </consumes>
+        <consumes endpoint-name="Service3ServiceRole_partnerRole" interface-name="ns12:Service3" service-name="ns19:PartnerLink2">
+            <ns27:display-name>PartnerLink2</ns27:display-name>
+            <ns27:process-name>asyncGetOrderHistory</ns27:process-name>
+            <ns27:file-path>localhost_8080\ElectricAppliancesWebService\services\service3\asyncGetOrderHistory.bpel</ns27:file-path>
+        </consumes>
+        <consumes endpoint-name="Service4ServiceRole_partnerRole" interface-name="ns12:Service4" service-name="ns21:PartnerLink2">
+            <ns27:display-name>PartnerLink2</ns27:display-name>
+            <ns27:process-name>asyncBookProduct</ns27:process-name>
+            <ns27:file-path>localhost_8080\ElectricAppliancesWebService\services\service4\asyncBookProduct.bpel</ns27:file-path>
+        </consumes>
+        <consumes endpoint-name="Service4ServiceRole_partnerRole" interface-name="ns12:Service4" service-name="ns22:PartnerLink2">
+            <ns27:display-name>PartnerLink2</ns27:display-name>
+            <ns27:process-name>asyncCancelBookProduct</ns27:process-name>
+            <ns27:file-path>localhost_8080\ElectricAppliancesWebService\services\service4\asyncCancelBookProduct.bpel</ns27:file-path>
+        </consumes>
+        <consumes endpoint-name="Service4ServiceRole_partnerRole" interface-name="ns12:Service4" service-name="ns23:PartnerLink2">
+            <ns27:display-name>PartnerLink2</ns27:display-name>
+            <ns27:process-name>asyncIsProductAvailable</ns27:process-name>
+            <ns27:file-path>localhost_8080\ElectricAppliancesWebService\services\service4\asyncIsProductAvailable.bpel</ns27:file-path>
+        </consumes>
+        <consumes endpoint-name="Service5ServiceRole_partnerRole" interface-name="ns12:Service5" service-name="ns24:PartnerLink2">
+            <ns27:display-name>PartnerLink2</ns27:display-name>
+            <ns27:process-name>asyncCartCost</ns27:process-name>
+            <ns27:file-path>localhost_8080\ElectricAppliancesWebService\services\service5\asyncCartCost.bpel</ns27:file-path>
+        </consumes>
+        <consumes endpoint-name="Service5ServiceRole_partnerRole" interface-name="ns12:Service5" service-name="ns25:PartnerLink2">
+            <ns27:display-name>PartnerLink2</ns27:display-name>
+            <ns27:process-name>asyncChargeCard</ns27:process-name>
+            <ns27:file-path>localhost_8080\ElectricAppliancesWebService\services\service5\asyncChargeCard.bpel</ns27:file-path>
+        </consumes>
+        <consumes endpoint-name="Service5ServiceRole_partnerRole" interface-name="ns12:Service5" service-name="ns26:PartnerLink2">
+            <ns27:display-name>PartnerLink2</ns27:display-name>
+            <ns27:process-name>asyncRefund</ns27:process-name>
+            <ns27:file-path>localhost_8080\ElectricAppliancesWebService\services\service5\asyncRefund.bpel</ns27:file-path>
+        </consumes>
+    </services>
+</jbi>
